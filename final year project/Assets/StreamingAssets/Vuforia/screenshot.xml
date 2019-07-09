@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="pngtree-Graphic-Design-Art-Pattern-background-photo-653244" size="10.000000 15.615385" />
+  </Tracking>
+</QCARConfig>
