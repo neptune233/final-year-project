@@ -64,8 +64,13 @@ public class MoveObject : MonoBehaviour {
             
             Newposition1 = Newposition1 + v1;
             Newposition2 = Newposition2 + v2;
-            Newposition3 = Newposition3 + v3; 
-        }
+            Newposition3 = Newposition3 + v3;
+            /*
+            Debug.Log(Newposition1);
+            Debug.Log(Newposition2);
+            Debug.Log(Newposition3);
+    */    
+    }
         if (Submit.NumofMatrix == 4)
         {
             q1 = Transformation_Matrix.GetRotation(Submit.Output1);
@@ -93,12 +98,14 @@ public class MoveObject : MonoBehaviour {
     {
 
         if (Submit.NumofMatrix == 1)
-        {
-            Debug.Log(Newposition1);
-            cube.transform.localPosition = Vector3.Lerp(cube.transform.localPosition, Newposition1, Time.deltaTime/3 );
-              cube.transform.localRotation = Quaternion.Slerp(cube.transform.localRotation, q1, Time.deltaTime/3);
-        }
-
+            if (Buttonid.Step == 1)
+            {
+                {
+                    Debug.Log(Newposition1);
+                    cube.transform.localPosition = Vector3.Lerp(cube.transform.localPosition, Newposition1, Time.deltaTime / 3);
+                    cube.transform.localRotation = Quaternion.Slerp(cube.transform.localRotation, q1, Time.deltaTime / 3);
+                }
+            }
 
 
         if (Submit.NumofMatrix == 2)
