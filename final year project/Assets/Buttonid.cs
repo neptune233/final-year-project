@@ -9,7 +9,7 @@ public class Buttonid : MonoBehaviour
 {
     
     public static int id=0;
-    public static int Step;
+    public static int Step=0;
     public GameObject ui;
     public TextMeshProUGUI HideUIbutton;
 

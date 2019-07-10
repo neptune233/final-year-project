@@ -51,10 +51,11 @@ public class Instruction : MonoBehaviour {
     public GameObject Right2;
     public GameObject Wrong1;
     public GameObject Wrong2;
+    public GameObject Instruction9;
     public GameObject Instruction10;
     public GameObject Button;
 
-    //Scene scene = SceneManager.GetActiveScene();
+    
 
     public void Button_1()
     {
@@ -77,7 +78,6 @@ public class Instruction : MonoBehaviour {
 
             }
         }
-        
     }
 
     public void Button_2()
@@ -190,7 +190,7 @@ public class Instruction : MonoBehaviour {
 
     public void Example()
     {
-        m1.text = "0.886 0 0.5 0\n 0 1 0 0\n -0.5 0 0.866 1\n 0 0 0 1";  
+        m1.text = "0.866 0 0.5 0\n0 1 0 0\n-0.5 0 0.866 1\n0 0 0 1";  
     }
 
     public void Checkmatrix()
@@ -260,6 +260,7 @@ public class Instruction : MonoBehaviour {
         
         if( state1==true && state2 == true)
         {
+            Instruction9.SetActive(false);
             Instruction10.SetActive(true);
             Button.SetActive(true);
         }

@@ -91,15 +91,6 @@ public class MoveObejct_Directly : MonoBehaviour
             v4 = Transformation_Matrix.GetPostion(a) / 40;
 
 
-
-            Debug.Log(Submit.Caculate1);
-
-            Debug.Log(Submit.Caculate1 * Submit.Caculate2);
-
-            Debug.Log(Submit.Caculate1 * Submit.Caculate2 * Submit.Caculate3);
-            Debug.Log(a);
-
-
             Newposition1 = Newposition1 + v1;
             Newposition2 = Newposition2 + v2;
             Newposition3 = Newposition3 + v3;

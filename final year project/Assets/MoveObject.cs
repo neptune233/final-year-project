@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 
-public class MoveObject_Matrix : MonoBehaviour {
+public class MoveObject : MonoBehaviour {
    
     public GameObject cube;
     Quaternion q1;
@@ -20,7 +20,12 @@ public class MoveObject_Matrix : MonoBehaviour {
     public static Vector3 Newposition3= new Vector3(0, 0.3f, 0);
     public static Vector3 Newposition4= new Vector3(0, 0.3f, 0);
 
-   
+    public void Start()
+    {
+        Debug.Log(this.gameObject);
+    }
+
+
 
 
     public void Onclick()
@@ -60,7 +65,7 @@ public class MoveObject_Matrix : MonoBehaviour {
             q3 = Transformation_Matrix.GetRotation(Submit.Output1 * Submit.Output2 * Submit.Output3);
             v3 = Transformation_Matrix.GetPostion(Submit.Output1 * Submit.Output2 * Submit.Output3) / 20;
 
-            Debug.Log(v3);
+            Debug.Log("choushabi");
             
             Newposition1 = Newposition1 + v1;
             Newposition2 = Newposition2 + v2;
