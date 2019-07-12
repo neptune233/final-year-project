@@ -55,6 +55,12 @@ public class Instruction : MonoBehaviour {
     public GameObject Instruction10;
     public GameObject Button;
 
+    //
+    public Text T03;
+    public GameObject Right3;
+    public GameObject Wrong3;
+
+
     
 
     public void Button_1()
@@ -190,7 +196,7 @@ public class Instruction : MonoBehaviour {
 
     public void Example()
     {
-        m1.text = "0.866 0 0.5 0\n0 1 0 0\n-0.5 0 0.866 1\n0 0 0 1";  
+        m1.text = "0.866 0 0.5 0\n0 1 0 0\n-0.5 0 0.866 0\n0 0 0 1";  
     }
 
     public void Checkmatrix()
@@ -264,13 +270,45 @@ public class Instruction : MonoBehaviour {
             Instruction10.SetActive(true);
             Button.SetActive(true);
         }
-
-
-
-      
-
     }
-        
+    
+    
+    public void Check0T3()
+    {
+        bool error4 = false;
+        float temp;
+        string Data4 = T03.text;
+        string[] numberlist4 = Data4.Split();
+        if (numberlist4.Length == 16)
+        {
+            for (int i = 0; i < numberlist4.Length; i++)
+            {
+                if (float.TryParse(numberlist4[i], out temp) == false)
+                {
+                    error4 = false;
+                    break;
+                }
+            }
+
+            if (error4 == true)
+            {
+                if (Mathf.Abs(float.Parse(numberlist4[0])-0.739f)< 0.02f && Mathf.Abs(float.Parse(numberlist4[1]) + 0.573f) < 0.02f && Mathf.Abs(float.Parse(numberlist4[2])-0.354f) < 0.02f && Mathf.Abs(float.Parse(numberlist4[3])) < 0.02f && Mathf.Abs(float.Parse(numberlist4[4]) - 0.612f) < 0.02f && Mathf.Abs(float.Parse(numberlist4[5]) - 0.354f) < 0.02f && Mathf.Abs(float.Parse(numberlist4[6])+0.707f) < 0.02f && Mathf.Abs(float.Parse(numberlist4[7])) < 0.02f && Mathf.Abs(float.Parse(numberlist4[8])-0.28f) < 0.02f && Mathf.Abs(float.Parse(numberlist4[9])-0.739f) < 0.02f && Mathf.Abs(float.Parse(numberlist4[10]) - 0.612f) < 0.02f && Mathf.Abs(float.Parse(numberlist4[11])) < 0.02f && Mathf.Abs(float.Parse(numberlist4[12])) < 0.02f && Mathf.Abs(float.Parse(numberlist4[13])) < 0.02f && Mathf.Abs(float.Parse(numberlist4[14])) < 0.02f && Mathf.Abs(float.Parse(numberlist4[15]) - 1f) < 0.02f)
+                {
+                    Right3.SetActive(true);
+                    Wrong3.SetActive(false);
+                    
+                }
+                else
+                {
+                    Wrong3.SetActive(true);
+                    Right3.SetActive(false);
+
+                }
+            }
+        }
+    }
+    
+
 }
     
 

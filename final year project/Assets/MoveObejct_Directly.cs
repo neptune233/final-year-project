@@ -65,7 +65,10 @@ public class MoveObejct_Directly : MonoBehaviour
             q3 = Transformation_Matrix.GetRotation(Submit.Caculate1 * Submit.Caculate2 * Submit.Caculate3);
             v3 = Transformation_Matrix.GetPostion(Submit.Caculate1 * Submit.Caculate2 * Submit.Caculate3) / 40;
 
-            Newposition1 = Newposition1 + v1;
+            Debug.Log(Submit.Caculate1 * Submit.Caculate2 * Submit.Caculate3);
+
+
+          Newposition1 = Newposition1 + v1;
             Newposition2 = Newposition2 + v2;
             Newposition3 = Newposition3 + v3;
         }

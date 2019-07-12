@@ -65,10 +65,11 @@ public class MoveObject_Matrix : MonoBehaviour {
             v3 = Transformation_Matrix.GetPostion(Submit.Output1 * Submit.Output2 * Submit.Output3) / 40;
 
             //Debug.Log(v3);
-            
-           
-       
-    }
+            Debug.Log(Submit.Output1 * Submit.Output2 * Submit.Output3);
+
+
+
+        }
         if (Submit.NumofMatrix == 4)
         {
             q1 = Transformation_Matrix.GetRotation(Submit.Output1);
