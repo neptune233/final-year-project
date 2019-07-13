@@ -12,13 +12,11 @@ public class Instruction : MonoBehaviour {
     public GameObject Instruction4;
     public GameObject Instruction5;
     public GameObject Eulerangle;
-    public GameObject Fixedangle;
     public GameObject Movemethod;
 
     // public gameobject for feedback2
     public GameObject ButtonWrong2;
-    public GameObject Add_Matrix;
-    public GameObject Add_Directly;
+    public GameObject Add;
     public GameObject Instruction6;
 
     // public text and gameobject to check the input in num of steps
@@ -86,19 +84,6 @@ public class Instruction : MonoBehaviour {
 
             }
         }
-        else
-        {
-            if (Buttonid.id == 1)
-            {
-                Fixedangle.SetActive(true);
-                Movemethod.SetActive(false);
-            }
-            if (Buttonid.id == 2)
-            {
-                Eulerangle.SetActive(true);
-                Movemethod.SetActive(false);
-            }
-        }
     }
 
     public void Button_2()
@@ -115,7 +100,7 @@ public class Instruction : MonoBehaviour {
             if (Buttonid.id == 3)
             {
                 Eulerangle.SetActive(false);
-                Add_Directly.SetActive(true);
+                Add.SetActive(true);
                 Instruction5.SetActive(false);
                 ButtonWrong2.SetActive(false);
                 Instruction6.SetActive(true);
@@ -132,24 +117,11 @@ public class Instruction : MonoBehaviour {
             if (Buttonid.id == 4)
             {
                 Eulerangle.SetActive(false);
-                Add_Matrix.SetActive(true);
+                Add.SetActive(true);
                 Instruction5.SetActive(false);
                 ButtonWrong2.SetActive(false);
                 Instruction6.SetActive(true);
                 Instruction7.SetActive(true);
-            }
-        }
-        if (scene.name.Equals("3"))
-        {
-            if(Buttonid.id == 3)
-            {
-                Add_Directly.SetActive(true);
-                Eulerangle.SetActive(false);
-            }
-            if (Buttonid.id == 4)
-            {
-                Add_Matrix.SetActive(true);
-                Eulerangle.SetActive(false);
             }
         }
    
