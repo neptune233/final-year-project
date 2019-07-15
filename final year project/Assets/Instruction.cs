@@ -62,18 +62,20 @@ public class Instruction : MonoBehaviour {
 
 
     
-
+    // Function for Move Method
     public void Button_1()
     {
         Scene scene = SceneManager.GetActiveScene();
         
-        Debug.Log(Buttonid.id);
+        // Case for scene 1 and 2 
         if (scene.name.Equals("1") || scene.name.Equals("2"))
         {
+            // Show feedback when user choose "fixed angle" button
             if (Buttonid.id != 2 )
             {
                 ButtonWrong1.SetActive(true);
             }
+        
             if (Buttonid.id == 2 )
             {
                 Movemethod.SetActive(false);
@@ -81,6 +83,17 @@ public class Instruction : MonoBehaviour {
                 Instruction4.SetActive(false);
                 ButtonWrong1.SetActive(false);
                 Instruction5.SetActive(true);
+            }
+        }
+        
+        else
+        {
+            if (Buttonid.id == 1)
+            {
+
+            }
+            if (Buttonid.id == 2)
+            {
 
             }
         }
@@ -169,7 +182,8 @@ public class Instruction : MonoBehaviour {
 
     public void Check_2and3()
     {
-        if(step2.text.Equals("R x 45") && step3.text.Equals("R z 60"))
+        //if(step2.text.Equals("R x 45") && step3.text.Equals("R z 60"))
+        if(step2.text.Equals("R z 60") && step3.text.Equals("R x 45"))
         {
             Correct_2.SetActive(true);
             Wrong_2.SetActive(false);

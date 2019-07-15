@@ -36,7 +36,7 @@ public class MoveObject_Matrix : MonoBehaviour {
             v1 = Transformation_Matrix.GetPostion(Submit.Output1)/r ; 
             
             Newposition1 = Newposition1 + v1;
-            //Debug.Log(Newposition1);
+          
             
         }
         if (Submit.NumofMatrix == 2)
@@ -49,8 +49,7 @@ public class MoveObject_Matrix : MonoBehaviour {
 
             Newposition1 = Newposition1 + v1;
             Newposition2 = Newposition2 + v2;
-
-            //Debug.Log(Newposition2);
+            
 
         }
         if (Submit.NumofMatrix == 3)
@@ -64,8 +63,9 @@ public class MoveObject_Matrix : MonoBehaviour {
             q3 = Transformation_Matrix.GetRotation(Submit.Output1 * Submit.Output2 * Submit.Output3);
             v3 = Transformation_Matrix.GetPostion(Submit.Output1 * Submit.Output2 * Submit.Output3) / 40;
 
-            //Debug.Log(v3);
-            Debug.Log(Submit.Output1 * Submit.Output2 * Submit.Output3);
+            Newposition1 = Newposition1 + v1;
+            Newposition2 = Newposition2 + v2;
+            Newposition3 = Newposition3 + v3;
 
 
 

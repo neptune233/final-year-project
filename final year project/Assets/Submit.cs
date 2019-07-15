@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Submit : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class Submit : MonoBehaviour
     public static Matrix4x4 Output2;
     public static Matrix4x4 Output3;
     public static Matrix4x4 Output4;
-
+    public GameObject Num_of_Matrix;
+    public GameObject SubmitButton_M;
 
 
     public static int NumofStep;
@@ -37,7 +39,8 @@ public class Submit : MonoBehaviour
     public static Matrix4x4 Caculate2;
     public static Matrix4x4 Caculate3;
     public static Matrix4x4 Caculate4;
-
+    public GameObject Num_of_Step;
+    public GameObject SubmitButton_S;
 
     // input the number of matrix
     public void Number_of_Matrix()
@@ -65,35 +68,75 @@ public class Submit : MonoBehaviour
     // show the correct number of matrix
     public void Show_Matrix()
     {
-        if (NumofMatrix == 1)
+        
+        if (NumofMatrix >= 1 && NumofMatrix <= 4)
         {
-            Matrix1.SetActive(true);
 
-        }
-        if (NumofMatrix == 2)
-        {
-            Matrix1.SetActive(true);
-            Matrix2.SetActive(true);
-        }
-        if (NumofMatrix == 3)
-        {
-            Matrix1.SetActive(true);
-            Matrix2.SetActive(true);
-            Matrix3.SetActive(true);
-        }
-        if (NumofMatrix == 4)
-        {
-            Matrix1.SetActive(true);
-            Matrix2.SetActive(true);
-            Matrix3.SetActive(true);
-            Matrix4.SetActive(true);
+            SubmitButton_M.SetActive(true);
+            Num_of_Matrix.SetActive(false);
+            if (NumofMatrix == 1)
+            {
+                Matrix1.SetActive(true);
+
+            }
+            if (NumofMatrix == 2)
+            {
+                Matrix1.SetActive(true);
+                Matrix2.SetActive(true);
+            }
+            if (NumofMatrix == 3)
+            {
+                Matrix1.SetActive(true);
+                Matrix2.SetActive(true);
+                Matrix3.SetActive(true);
+            }
+            if (NumofMatrix == 4)
+            {
+                Matrix1.SetActive(true);
+                Matrix2.SetActive(true);
+                Matrix3.SetActive(true);
+                Matrix4.SetActive(true);
+            }
         }
     }
 
 
     public void Show_Step()
     {
-        
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name.Equals("3"))
+        {
+            if (NumofStep >= 1 && NumofStep <= 4)
+            {
+                SubmitButton_S.SetActive(true);
+                Num_of_Step.SetActive(false);
+                if (NumofStep == 1)
+                {
+                    Step1.SetActive(true);
+
+                }
+                if (NumofStep == 2)
+                {
+                    Step1.SetActive(true);
+                    Step2.SetActive(true);
+                }
+                if (NumofStep == 3)
+                {
+                    Step1.SetActive(true);
+                    Step2.SetActive(true);
+                    Step3.SetActive(true);
+                }
+                if (NumofStep == 4)
+                {
+                    Step1.SetActive(true);
+                    Step2.SetActive(true);
+                    Step3.SetActive(true);
+                    Step4.SetActive(true);
+                }
+            }
+        }
+        if (scene.name.Equals("1"))
+        {
             if (NumofStep == 1)
             {
                 Step1.SetActive(true);
@@ -117,7 +160,8 @@ public class Submit : MonoBehaviour
                 Step3.SetActive(true);
                 Step4.SetActive(true);
             }
-        
+        }
+
     }
 
     // input the value into matrix
