@@ -5,6 +5,7 @@ Confidential and Proprietary - Protected under copyright and other laws.
 ==============================================================================*/
 
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Vuforia
 {
@@ -14,6 +15,8 @@ namespace Vuforia
     public class DefaultTrackableEventHandler : MonoBehaviour,
                                                 ITrackableEventHandler
     {
+        public Transform TheCanvas;
+
         #region PRIVATE_MEMBER_VARIABLES
  
         private TrackableBehaviour mTrackableBehaviour;
@@ -31,6 +34,7 @@ namespace Vuforia
             {
                 mTrackableBehaviour.RegisterTrackableEventHandler(this);
             }
+            TheCanvas.gameObject.SetActive(false);
         }
 
         #endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -84,6 +88,8 @@ namespace Vuforia
             }
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
+
+            TheCanvas.gameObject.SetActive(true);
         }
 
 
@@ -105,6 +111,8 @@ namespace Vuforia
             }
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
+
+            TheCanvas.gameObject.SetActive(false);
         }
 
         #endregion // PRIVATE_METHODS
