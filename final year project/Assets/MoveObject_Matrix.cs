@@ -55,13 +55,13 @@ public class MoveObject_Matrix : MonoBehaviour {
         if (Submit.NumofMatrix == 3)
         {
             q1 = Transformation_Matrix.GetRotation(Submit.Output1);
-            v1 = Transformation_Matrix.GetPostion(Submit.Output1) / 40;
+            v1 = Transformation_Matrix.GetPostion(Submit.Output1) / r;
 
             q2 = Transformation_Matrix.GetRotation(Submit.Output1 * Submit.Output2);
-            v2 = Transformation_Matrix.GetPostion(Submit.Output1 * Submit.Output2) / 40;
+            v2 = Transformation_Matrix.GetPostion(Submit.Output1 * Submit.Output2) / r;
 
             q3 = Transformation_Matrix.GetRotation(Submit.Output1 * Submit.Output2 * Submit.Output3);
-            v3 = Transformation_Matrix.GetPostion(Submit.Output1 * Submit.Output2 * Submit.Output3) / 40;
+            v3 = Transformation_Matrix.GetPostion(Submit.Output1 * Submit.Output2 * Submit.Output3) / r;
 
             Newposition1 = Newposition1 + v1;
             Newposition2 = Newposition2 + v2;
