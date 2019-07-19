@@ -12,7 +12,7 @@ public class colour : MonoBehaviour {
 
 
 
-    public GameObject orgin;
+    
     public GameObject xx;
     public GameObject yy;
     public GameObject zz;
@@ -32,15 +32,14 @@ public class colour : MonoBehaviour {
         xx.GetComponent<MeshRenderer>().material.color = Color.red;
         yy.GetComponent<MeshRenderer>().material.color = Color.green;
         zz.GetComponent<MeshRenderer>().material.color = Color.blue;
-        orgin.GetComponent<MeshRenderer>().material.color = Color.black;
+        
+      
         point.GetComponent<MeshRenderer>().material.color = a;
         vector.GetComponent<MeshRenderer>().material.color = a;
+        
     }
 		
 	
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	
 }
