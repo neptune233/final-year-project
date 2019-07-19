@@ -10,8 +10,12 @@ public class Quiz : MonoBehaviour
     public GameObject ChoiceD;
     public GameObject LeftArrow;
     public GameObject RightArrow;
-    public GameObject True;
-    public GameObject False;
+    public GameObject Q0_A;
+    public GameObject Q0_B;
+    public GameObject Q0_C;
+    public GameObject Q0_D;
+    public GameObject Ans0;
+    public GameObject Q0;
 
     // function when press the leftarrow
     public void Left()
@@ -76,15 +80,40 @@ public class Quiz : MonoBehaviour
         }
     }
 
-    public void Q_1_T()
+    // Question 0
+    public void Q_0_A()
     {
-        True.SetActive(true);
-        False.SetActive(false);
+        Q0_A.SetActive(true);
+        Q0_B.SetActive(false);
+        Q0_C.SetActive(false);
+        Q0_D.SetActive(false);
     }
 
-    public void Q_1_F()
+    public void Q_0_B()
     {
-        True.SetActive(false);
-        False.SetActive(true);
+        Q0_A.SetActive(false);
+        Q0_B.SetActive(true);
+        Q0_C.SetActive(false);
+        Q0_D.SetActive(false);
+        Ans0.SetActive(true);
+        Q0_B.SetActive(false);
+
     }
+
+    public void Q_0_C()
+    {
+        Q0_A.SetActive(false);
+        Q0_B.SetActive(false);
+        Q0_C.SetActive(true);
+        Q0_D.SetActive(false);
+    }
+
+    public void Q_0_D()
+    {
+        Q0_A.SetActive(false);
+        Q0_B.SetActive(false);
+        Q0_C.SetActive(false);
+        Q0_D.SetActive(true);
+    }
+
 }
