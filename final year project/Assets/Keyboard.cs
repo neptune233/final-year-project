@@ -1,23 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Keyboard : MonoBehaviour
 {
-    
-    public GameObject Inputfield;
+    public InputField InputBlock;
 
-    public string add_content;
-    // Start is called before the first frame update
 
-    public void AddToInput()
+    public void InputString(string inputstring)
     {
-        //Inputfield.transform.GetChild(1).gameObject.GetComponent<>(text).Text += add_content;
+        InputBlock.text += inputstring;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Backspace()
     {
-        
+        InputBlock.text.Remove(InputBlock.text.Length - 1);
     }
 }
