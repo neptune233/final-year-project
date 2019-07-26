@@ -5,16 +5,28 @@ using UnityEngine.UI;
 
 public class Keyboard : MonoBehaviour
 {
-    public InputField InputBlock;
-
+    public InputField[] InputBlock;
+    public int current_inputfield = 0;
 
     public void InputString(string inputstring)
     {
-        InputBlock.text += inputstring;
+        InputBlock[current_inputfield].text += inputstring;
     }
 
     public void Backspace()
     {
-        InputBlock.text.Remove(InputBlock.text.Length - 1);
+        if (InputBlock[current_inputfield].text.Length > 0)
+        {
+            InputBlock[current_inputfield].text = InputBlock[current_inputfield].text.Remove(InputBlock[current_inputfield].text.Length - 1);
+        }
+    }
+
+    public void Next_btn()
+    {
+        current_inputfield += 1;
+        if (current_inputfield > InputBlock.Length)
+        {
+            current_inputfield = InputBlock.Length;
+        }
     }
 }
