@@ -9,14 +9,7 @@ public class Submit : MonoBehaviour
 
     public static int NumofMatrix;
     public Text numberofmatrix;
-    public Text matrix1;
-    public Text matrix2;
-    public Text matrix3;
-    public Text matrix4;
-    public GameObject Matrix1;
-    public GameObject Matrix2;
-    public GameObject Matrix3;
-    public GameObject Matrix4;
+
     public static Matrix4x4 Output1;
     public static Matrix4x4 Output2;
     public static Matrix4x4 Output3;
@@ -42,6 +35,17 @@ public class Submit : MonoBehaviour
     public GameObject Num_of_Step;
     public GameObject SubmitButton_S;
 
+    public InputField[] M1;
+    public InputField[] M2;
+    public InputField[] M3;
+    public InputField[] M4;
+    public GameObject Matrix1;
+    public GameObject Matrix2;
+    public GameObject Matrix3;
+    public GameObject Matrix4;
+
+
+
     // input the number of matrix
     public void Number_of_Matrix()
     {
@@ -65,7 +69,7 @@ public class Submit : MonoBehaviour
         }
     }
 
-    // show the correct number of matrix
+    // show the matrices inputfield with corrct number
     public void Show_Matrix()
     {
         
@@ -100,7 +104,7 @@ public class Submit : MonoBehaviour
         }
     }
 
-
+    // show the steps inputfield with corrct number
     public void Show_Step()
     {
         Scene scene = SceneManager.GetActiveScene();
@@ -165,6 +169,8 @@ public class Submit : MonoBehaviour
     }
 
     // input the value into matrix
+    
+    /*
     public void InputMatrix()
     {
         //data for matrix1
@@ -304,7 +310,9 @@ public class Submit : MonoBehaviour
         }
 
     }
+    */
 
+    // convert the input of directly step
     public void InputStep()
     {
         string Data1 = step1.text;
@@ -552,319 +560,140 @@ public class Submit : MonoBehaviour
                 }
             }
         }
-
-
-
-
-        /*
-        //step1
-        string Data1 = step1.text;
-        string[] numberlist1 = Data1.Split();
-        float value1;
-
-        float temp1;
-        if (numberlist1.Length != 0)
+    }
+    public void InputMatrix_16()
+    {
+        //data for matrix1
+        bool error1 = true;
+        float temp;
+        for (int i = 0; i < 16; i++)
         {
-            if (float.TryParse(numberlist1[2], out temp1) == true)
+            if (float.TryParse(M1[i].text, out temp) == false)
             {
-                value1 = float.Parse(numberlist1[2]);
-
-                if (numberlist1[0].Equals("T"))
-                {
-                    if (numberlist1[1].Equals("x"))
-                    {
-                        Caculate1.m00 = 1;
-                        Caculate1.m11 = 1;
-                        Caculate1.m22 = 1;
-                        Caculate1.m33 = 1;
-                        Caculate1.m03 = value1;
-                    }
-                    if (numberlist1[1].Equals("y"))
-                    {
-                        Caculate1.m00 = 1;
-                        Caculate1.m11 = 1;
-                        Caculate1.m22 = 1;
-                        Caculate1.m33 = 1;
-                        Caculate1.m13 = value1;
-                    }
-                    if (numberlist1[1].Equals("z"))
-                    {
-                        Caculate1.m00 = 1;
-                        Caculate1.m11 = 1;
-                        Caculate1.m22 = 1;
-                        Caculate1.m33 = 1;
-                        Caculate1.m23 = value1;
-                    }
-                }
-
-                if (numberlist1[0].Equals("R"))
-                {
-                    value1 = value1 / 180 * Mathf.PI;
-                    if (numberlist1[1].Equals("x"))
-                    {
-                        Caculate1.m00 = 1;
-                        Caculate1.m11 = Mathf.Cos(value1);
-                        Caculate1.m12 = -Mathf.Sin(value1);
-                        Caculate1.m21 = Mathf.Sin(value1);
-                        Caculate1.m22 = Mathf.Cos(value1);
-                        Caculate1.m33 = 1;
-                    }
-
-                    if (numberlist1[1].Equals("y"))
-                    {
-                        Caculate1.m00 = Mathf.Cos(value1);
-                        Caculate1.m12 = Mathf.Sin(value1);
-                        Caculate1.m22 = 1;
-                        Caculate1.m20 = -Mathf.Sin(value1);
-                        Caculate1.m22 = Mathf.Cos(value1);
-                        Caculate1.m33 = 1;
-                    }
-                    if (numberlist1[1].Equals("z"))
-                    {
-                        Caculate1.m00 = Mathf.Cos(value1);
-                        Caculate1.m11 = Mathf.Cos(value1);
-                        Caculate1.m01 = -Mathf.Sin(value1);
-                        Caculate1.m10 = Mathf.Sin(value1);
-                        Caculate1.m22 = 1;
-                        Caculate1.m33 = 1;
-                    }
-                }
+                error1 = false;
+                break;
             }
         }
-
-    
-        //step2
-
-        string Data2 = step2.text;
-        string[] numberlist2 = Data2.Split();
-        float value2;
-
-        float temp2;
-        if (numberlist2.Length == 3)
+        if (error1 == true)
         {
-            if (float.TryParse(numberlist1[2], out temp2) == true)
+            Output1.m00 = float.Parse(M1[0].text);
+            Output1.m01 = float.Parse(M1[1].text);
+            Output1.m02 = float.Parse(M1[2].text);
+            Output1.m03 = float.Parse(M1[3].text);
+            Output1.m10 = float.Parse(M1[4].text);
+            Output1.m11 = float.Parse(M1[5].text);
+            Output1.m12 = float.Parse(M1[6].text);
+            Output1.m13 = float.Parse(M1[7].text);
+            Output1.m20 = float.Parse(M1[8].text);
+            Output1.m21 = float.Parse(M1[9].text);
+            Output1.m22 = float.Parse(M1[10].text);
+            Output1.m23 = float.Parse(M1[11].text);
+            Output1.m30 = float.Parse(M1[12].text);
+            Output1.m31 = float.Parse(M1[13].text);
+            Output1.m32 = float.Parse(M1[14].text);
+            Output1.m33 = float.Parse(M1[15].text);
+            Debug.Log(Output1);
+        }
+
+        //data for matrix2
+        bool error2 = true;
+        for (int i = 0; i < 16; i++)
+        {
+            if (float.TryParse(M2[i].text, out temp) == false)
             {
-                value2 = float.Parse(numberlist2[2]);
-
-                if (numberlist2[0].Equals("T"))
-                {
-                    if (numberlist2[1].Equals("x"))
-                    {
-                        Caculate2.m00 = 1;
-                        Caculate2.m11 = 1;
-                        Caculate2.m22 = 1;
-                        Caculate2.m33 = 1;
-                        Caculate2.m03 = value2;
-                    }
-                    if (numberlist2[1].Equals("y"))
-                    {
-                        Caculate2.m00 = 1;
-                        Caculate2.m11 = 1;
-                        Caculate2.m22 = 1;
-                        Caculate2.m33 = 1;
-                        Caculate2.m13 = value2;
-                    }
-                    if (numberlist2[1].Equals("z"))
-                    {
-                        Caculate2.m00 = 1;
-                        Caculate2.m11 = 1;
-                        Caculate2.m22 = 1;
-                        Caculate2.m33 = 1;
-                        Caculate2.m23 = value2;
-                    }
-                }
-
-                if (numberlist2[0].Equals("R"))
-                {
-                    value2 = value2 / 180 * Mathf.PI;
-                    if (numberlist2[1].Equals("x"))
-                    {
-                        Caculate2.m00 = 1;
-                        Caculate2.m11 = Mathf.Cos(value2);
-                        Caculate2.m12 = -Mathf.Sin(value2);
-                        Caculate2.m21 = Mathf.Sin(value2);
-                        Caculate2.m22 = Mathf.Cos(value2);
-                        Caculate2.m33 = 1;
-                    }
-
-                    if (numberlist2[1].Equals("y"))
-                    {
-                        Caculate2.m00 = Mathf.Cos(value2);
-                        Caculate2.m12 = Mathf.Sin(value2);
-                        Caculate2.m22 = 1;
-                        Caculate2.m20 = -Mathf.Sin(value2);
-                        Caculate2.m22 = Mathf.Cos(value2);
-                        Caculate2.m33 = 1;
-                    }
-                    if (numberlist2[1].Equals("z"))
-                    {
-                        Caculate2.m00 = Mathf.Cos(value2);
-                        Caculate2.m11 = Mathf.Cos(value2);
-                        Caculate2.m01 = -Mathf.Sin(value2);
-                        Caculate2.m10 = Mathf.Sin(value2);
-                        Caculate2.m22 = 1;
-                        Caculate2.m33 = 1;
-                    }
-                }
+                error2 = false;
+                break;
             }
         }
-       
-
-        //step3
-
-        string Data3 = step3.text;
-        string[] numberlist3 = Data3.Split();
-        float value3;
-
-        float temp3;
-        if (numberlist3.Length == 3)
+        if (error2 == true)
         {
-            if (float.TryParse(numberlist3[2], out temp3) == true)
+            Output2.m00 = float.Parse(M2[0].text);
+            Output2.m01 = float.Parse(M2[1].text);
+            Output2.m02 = float.Parse(M2[2].text);
+            Output2.m03 = float.Parse(M2[3].text);
+            Output2.m10 = float.Parse(M2[4].text);
+            Output2.m11 = float.Parse(M2[5].text);
+            Output2.m12 = float.Parse(M2[6].text);
+            Output2.m13 = float.Parse(M2[7].text);
+            Output2.m20 = float.Parse(M2[8].text);
+            Output2.m21 = float.Parse(M2[9].text);
+            Output2.m22 = float.Parse(M2[10].text);
+            Output2.m23 = float.Parse(M2[11].text);
+            Output2.m30 = float.Parse(M2[12].text);
+            Output2.m31 = float.Parse(M2[13].text);
+            Output2.m32 = float.Parse(M2[14].text);
+            Output2.m33 = float.Parse(M2[15].text);
+            Debug.Log(Output2);
+        }
+
+        //data for matrix3
+        bool error3 = true;
+        for (int i = 0; i < 16; i++)
+        {
+            if (float.TryParse(M3[i].text, out temp) == false)
             {
-                value3 = float.Parse(numberlist3[2]);
-
-                if (numberlist3[0].Equals("T"))
-                {
-                    if (numberlist3[1].Equals("x"))
-                    {
-                        Caculate3.m00 = 1;
-                        Caculate3.m11 = 1;
-                        Caculate3.m22 = 1;
-                        Caculate3.m33 = 1;
-                        Caculate3.m03 = value3;
-                    }
-                    if (numberlist3[1].Equals("y"))
-                    {
-                        Caculate3.m00 = 1;
-                        Caculate3.m11 = 1;
-                        Caculate3.m22 = 1;
-                        Caculate3.m33 = 1;
-                        Caculate3.m13 = value3;
-                    }
-                    if (numberlist3[1].Equals("z"))
-                    {
-                        Caculate3.m00 = 1;
-                        Caculate3.m11 = 1;
-                        Caculate3.m22 = 1;
-                        Caculate3.m33 = 1;
-                        Caculate3.m23 = value3;
-                    }
-                }
-
-                if (numberlist3[0].Equals("R"))
-                {
-                    value3 = value3 / 180 * Mathf.PI;
-                    if (numberlist3[1].Equals("x"))
-                    {
-                        Caculate3.m00 = 1;
-                        Caculate3.m11 = Mathf.Cos(value3);
-                        Caculate3.m12 = -Mathf.Sin(value3);
-                        Caculate3.m21 = Mathf.Sin(value3);
-                        Caculate3.m22 = Mathf.Cos(value3);
-                        Caculate3.m33 = 1;
-                    }
-
-                    if (numberlist3[1].Equals("y"))
-                    {
-                        Caculate3.m00 = Mathf.Cos(value3);
-                        Caculate3.m12 = Mathf.Sin(value3);
-                        Caculate3.m22 = 1;
-                        Caculate3.m20 = -Mathf.Sin(value3);
-                        Caculate3.m22 = Mathf.Cos(value3);
-                        Caculate3.m33 = 1;
-                    }
-                    if (numberlist2[1].Equals("z"))
-                    {
-                        Caculate3.m00 = Mathf.Cos(value3);
-                        Caculate3.m11 = Mathf.Cos(value3);
-                        Caculate3.m01 = -Mathf.Sin(value3);
-                        Caculate3.m10 = Mathf.Sin(value3);
-                        Caculate3.m22 = 1;
-                        Caculate3.m33 = 1;
-                    }
-                }
-
+                error3 = false;
+                break;
             }
         }
-        //step4
-
-        string Data4 = step4.text;
-        string[] numberlist4 = Data4.Split();
-        float value4;
-
-        float temp4;
-        if (numberlist4.Length == 3)
+        if (error3 == true)
         {
-            if (float.TryParse(numberlist4[2], out temp4) == true)
+            Output3.m00 = float.Parse(M3[0].text);
+            Output3.m01 = float.Parse(M3[1].text);
+            Output3.m02 = float.Parse(M3[2].text);
+            Output3.m03 = float.Parse(M3[3].text);
+            Output3.m10 = float.Parse(M3[4].text);
+            Output3.m11 = float.Parse(M3[5].text);
+            Output3.m12 = float.Parse(M3[6].text);
+            Output3.m13 = float.Parse(M3[7].text);
+            Output3.m20 = float.Parse(M3[8].text);
+            Output3.m21 = float.Parse(M3[9].text);
+            Output3.m22 = float.Parse(M3[10].text);
+            Output3.m23 = float.Parse(M3[11].text);
+            Output3.m30 = float.Parse(M3[12].text);
+            Output3.m31 = float.Parse(M3[13].text);
+            Output3.m32 = float.Parse(M3[14].text);
+            Output3.m33 = float.Parse(M3[15].text);
+            Debug.Log(Output3);
+        }
+
+        //data for matrix4;
+        bool error4 = true;
+        for (int i = 0; i < 16; i++)
+        {
+            if (float.TryParse(M4[i].text, out temp) == false)
             {
-                value4 = float.Parse(numberlist4[2]);
-
-                if (numberlist4[0].Equals("T"))
-                {
-                    if (numberlist4[1].Equals("x"))
-                    {
-                        Caculate4.m00 = 1;
-                        Caculate4.m11 = 1;
-                        Caculate4.m22 = 1;
-                        Caculate4.m33 = 1;
-                        Caculate4.m03 = value4;
-                    }
-                    if (numberlist4[1].Equals("y"))
-                    {
-                        Caculate4.m00 = 1;
-                        Caculate4.m11 = 1;
-                        Caculate4.m22 = 1;
-                        Caculate4.m33 = 1;
-                        Caculate4.m13 = value4;
-                    }
-                    if (numberlist4[1].Equals("z"))
-                    {
-                        Caculate4.m00 = 1;
-                        Caculate4.m11 = 1;
-                        Caculate4.m22 = 1;
-                        Caculate4.m33 = 1;
-                        Caculate4.m23 = value4;
-                    }
-                }
-
-                if (numberlist4[0].Equals("R"))
-                {
-                    value4 = value4 / 180 * Mathf.PI;
-                    if (numberlist4[1].Equals("x"))
-                    {
-                        Caculate4.m00 = 1;
-                        Caculate4.m11 = Mathf.Cos(value4);
-                        Caculate4.m12 = -Mathf.Sin(value4);
-                        Caculate4.m21 = Mathf.Sin(value4);
-                        Caculate4.m22 = Mathf.Cos(value4);
-                        Caculate4.m33 = 1;
-                    }
-
-                    if (numberlist4[1].Equals("y"))
-                    {
-                        Caculate4.m00 = Mathf.Cos(value4);
-                        Caculate4.m12 = Mathf.Sin(value4);
-                        Caculate4.m22 = 1;
-                        Caculate4.m20 = -Mathf.Sin(value4);
-                        Caculate4.m22 = Mathf.Cos(value4);
-                        Caculate4.m33 = 1;
-                    }
-                    if (numberlist4[1].Equals("z"))
-                    {
-                        Caculate4.m00 = Mathf.Cos(value4);
-                        Caculate4.m11 = Mathf.Cos(value4);
-                        Caculate4.m01 = -Mathf.Sin(value4);
-                        Caculate4.m10 = Mathf.Sin(value4);
-                        Caculate4.m22 = 1;
-                        Caculate4.m33 = 1;
-                    }
-                }
+                error4 = false;
+                break;
             }
         }
-        */
-
+        if (error4 == true)
+        {
+            Output4.m00 = float.Parse(M4[0].text);
+            Output4.m01 = float.Parse(M4[1].text);
+            Output4.m02 = float.Parse(M4[2].text);
+            Output4.m03 = float.Parse(M4[3].text);
+            Output4.m10 = float.Parse(M4[4].text);
+            Output4.m11 = float.Parse(M4[5].text);
+            Output4.m12 = float.Parse(M4[6].text);
+            Output4.m13 = float.Parse(M4[7].text);
+            Output4.m20 = float.Parse(M4[8].text);
+            Output4.m21 = float.Parse(M4[9].text);
+            Output4.m22 = float.Parse(M4[10].text);
+            Output4.m23 = float.Parse(M4[11].text);
+            Output4.m30 = float.Parse(M4[12].text);
+            Output4.m31 = float.Parse(M4[13].text);
+            Output4.m32 = float.Parse(M4[14].text);
+            Output4.m33 = float.Parse(M4[15].text);
+            Debug.Log(Output4);
+        }
     }
 }
+
+
+
+
+
 
 
 

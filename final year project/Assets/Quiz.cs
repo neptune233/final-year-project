@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System;
+
 
 public class Quiz : MonoBehaviour
 {
@@ -16,7 +19,9 @@ public class Quiz : MonoBehaviour
     public GameObject Q0_D;
     public GameObject Ans0;
     public GameObject Q0;
-
+    public Text Q1;
+ 
+    
     // function when press the leftarrow
     public void Left()
     {
@@ -24,9 +29,9 @@ public class Quiz : MonoBehaviour
         {
             ChoiceA.SetActive(false);
             ChoiceD.SetActive(true);
-            
+
             Debug.Log('D');
-            
+
         }
         else if (ChoiceB.activeSelf == true)
         {
@@ -51,7 +56,7 @@ public class Quiz : MonoBehaviour
     }
 
     // function when press the rightarrow
- 
+
     public void Right()
     {
         if (ChoiceA.activeSelf == true)
@@ -115,5 +120,27 @@ public class Quiz : MonoBehaviour
         Q0_C.SetActive(false);
         Q0_D.SetActive(true);
     }
+
+
+
+    ///////////////////
+    public void Question1()
+    {
+        System.Random ran = new System.Random();
+        string[] angle= { "30", "45", "60" };
+        string[] xyz = new string[3];
+        for(int i=0;i<3;i++)
+        {
+            xyz[i]= angle[ran.Next(0, 3)];
+        }
+        
+        int b = ran.Next(0, 2);
+        
+        Q1.text = "x"+xyz[0]+ "y" + xyz[1]+"z" + xyz[2];
+
+
+    }
+
+
 
 }
