@@ -17,8 +17,8 @@ public void OnClick()
         MoveObejct_Directly.Newposition4 = new Vector3(0, 0.3f, 0);
 
     }
-    public void Skip()
+    public void Exercise1()
     {
-        SceneManager.LoadScene("Index");
+        SceneManager.LoadScene("2_1");
     }
 }

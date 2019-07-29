@@ -63,7 +63,7 @@ public class Instruction : MonoBehaviour {
     public GameObject Wrong3;
     public GameObject Hint;
 
-    public InputField[] T04;
+    public InputField[] T40;
     public GameObject Right4;
     public GameObject Wrong4;
     public GameObject Hint2;
@@ -482,13 +482,13 @@ public class Instruction : MonoBehaviour {
     }
     */
 
-    public void Check0T4()
+    public void Check4T0()
     {
         float temp;
         bool error5 = true;
         for (int i = 0; i < 16; i++)
         {
-            if (float.TryParse(T04[i].text, out temp) == false)
+            if (float.TryParse(T40[i].text, out temp) == false)
             {
                 error5 = false;
                 break;
@@ -496,16 +496,17 @@ public class Instruction : MonoBehaviour {
         }
         if (error5 == true)
         {
-            if (Mathf.Abs(float.Parse(T04[0].text) - 0.739f) < 0.01f && Mathf.Abs(float.Parse(T04[1].text) + 0.573f) < 0.01f && Mathf.Abs(float.Parse(T04[2].text) - 0.354f) < 0.01f && Mathf.Abs(float.Parse(T03[3].text) - 10f) < 0.01f && Mathf.Abs(float.Parse(T03[4].text) - 0.612f) < 0.01f && Mathf.Abs(float.Parse(T03[5].text) - 0.354f) < 0.01f && Mathf.Abs(float.Parse(T03[6].text) + 0.707f) < 0.01f && Mathf.Abs(float.Parse(T03[7].text) + 5f) < 0.01f && Mathf.Abs(float.Parse(T03[8].text) - 0.28f) < 0.01f && Mathf.Abs(float.Parse(T03[9].text) - 0.739f) < 0.01f && Mathf.Abs(float.Parse(T03[10].text) - 0.612f) < 0.01f && Mathf.Abs(float.Parse(T03[11].text) - 4f) < 0.01f && Mathf.Abs(float.Parse(T03[12].text)) < 0.01f && Mathf.Abs(float.Parse(T03[13].text)) < 0.01f && Mathf.Abs(float.Parse(T03[14].text)) < 0.01 && Mathf.Abs(float.Parse(T03[15].text) - 1f) < 0.01f)
+            if (Mathf.Abs(float.Parse(T40[0].text) - 0.739f) < 0.01f && Mathf.Abs(float.Parse(T40[1].text) - 0.612f) < 0.01f && Mathf.Abs(float.Parse(T40[2].text) - 0.28f) < 0.01f && Mathf.Abs(float.Parse(T40[3].text) + 5.45f) < 0.01f && Mathf.Abs(float.Parse(T40[4].text) + 0.573f) < 0.01f && Mathf.Abs(float.Parse(T40[5].text) - 0.354f) < 0.01f && Mathf.Abs(float.Parse(T40[6].text) - 0.739f) < 0.01f && Mathf.Abs(float.Parse(T40[7].text) - 4.54f) < 0.01f && Mathf.Abs(float.Parse(T40[8].text) - 0.354f) < 0.01f && Mathf.Abs(float.Parse(T40[9].text) + 0.707f) < 0.01f && Mathf.Abs(float.Parse(T40[10].text) - 0.612f) < 0.01f && Mathf.Abs(float.Parse(T40[11].text) + 9.52f) < 0.01f && Mathf.Abs(float.Parse(T40[12].text)) < 0.01f && Mathf.Abs(float.Parse(T40[13].text)) < 0.01f && Mathf.Abs(float.Parse(T40[14].text)) < 0.01 && Mathf.Abs(float.Parse(T40[15].text) - 1f) < 0.01f)
             {
-                Right3.SetActive(true);
-                Wrong3.SetActive(false);
-                Hint.SetActive(true);
+                Right4.SetActive(true);
+                Wrong4.SetActive(false);
+                Hint2.SetActive(true);
+                Check.SetActive(false);
             }
             else
             {
-                Wrong3.SetActive(true);
-                Right3.SetActive(false);
+                Wrong4.SetActive(true);
+                Right4.SetActive(false);
 
             }
         }
