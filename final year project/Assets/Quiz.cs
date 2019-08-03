@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System;
 
 
+
 public class Quiz : MonoBehaviour
 {
     public GameObject ChoiceA;
@@ -19,7 +20,7 @@ public class Quiz : MonoBehaviour
     public GameObject Q0_D;
     public GameObject Ans0;
     public GameObject Q0;
-    public Text Q1;
+    public GameObject Q1;
     public Matrix4x4 M1;
     public Matrix4x4 M2;
     public Matrix4x4 M3;
@@ -146,12 +147,12 @@ public class Quiz : MonoBehaviour
         
         if (b <10)
         {
-            Q1.text = "Frame{B} is initally coincident with world coordinate system. Frame{B} is rotated about x axis itself by " + xyz[0] + " degree ,then rotated about y axis itself by " + xyz[1] + " degree,then about z aixs itself by " + xyz[2]+" degree. Finally,the origin of {B} is translated to [x y z]=[3 4 5] which is related to world. Try to caculate the transformation matrix which maps the point from frame{B} to world frame";
+            Q1.GetComponent<TMPro.TextMeshProUGUI>().text = "Frame{B} is initally coincident with world coordinate system. Frame{B} is rotated about x axis itself by " + xyz[0] + " degree ,then rotated about y axis itself by " + xyz[1] + " degree,then about z aixs itself by " + xyz[2]+" degree. Finally,the origin of {B} is translated to [x y z]=[3 4 5] which is related to world. Try to caculate the transformation matrix which maps the point from frame{B} to world frame";
         }
 
         if (b < 9)
         {
-            Q1.text = "Frame{B} is initally coincident with world coordinate system. Frame{B} is rotated about x axis of world by " + xyz[0] + " degree ,then rotated about y axis of world by " + xyz[1] + " degree,then about z aixs of world by " + xyz[2] + " degree. Finally,the origin of {B} is translated to [x y z]=[3 4 5] which is related to the frame{B}. Try to caculate the transformation matrix which maps the point from frame{B} to world frame";
+            Q1.GetComponent<TMPro.TextMeshProUGUI>().text = "Frame{B} is initally coincident with world coordinate system. Frame{B} is rotated about x axis of world by " + xyz[0] + " degree ,then rotated about y axis of world by " + xyz[1] + " degree,then about z aixs of world by " + xyz[2] + " degree. Finally,the origin of {B} is translated to [x y z]=[3 4 5] which is related to the frame{B}. Try to caculate the transformation matrix which maps the point from frame{B} to world frame";
         }
 
 

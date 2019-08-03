@@ -76,7 +76,7 @@ public class Submit : MonoBehaviour
         if (NumofMatrix >= 1 && NumofMatrix <= 4)
         {
 
-            SubmitButton_M.SetActive(true);
+            //SubmitButton_M.SetActive(true);
             Num_of_Matrix.SetActive(false);
             if (NumofMatrix == 1)
             {

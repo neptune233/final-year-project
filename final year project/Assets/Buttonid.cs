@@ -11,7 +11,9 @@ public class Buttonid : MonoBehaviour
     public static int id=0;
     public static int Step=0;
     public GameObject ui;
-    public TextMeshProUGUI HideUIbutton;
+    public GameObject Intro;
+    public GameObject Enable;
+    public GameObject Disable;
 
     // check which step button is pressed
     public void Stepid()
@@ -62,12 +64,18 @@ public class Buttonid : MonoBehaviour
     public void HideUI()
     {
         ui.SetActive(!ui.active);
+        Intro.SetActive(!Intro.active);
         if (ui.active == true){
-            HideUIbutton.text = "Disable UI";
+            Enable.SetActive(true);
+            Disable.SetActive(false);
+         
+
         }
         else
         {
-            HideUIbutton.text = "Enable UI"; 
+            Enable.SetActive(false);
+            Disable.SetActive(true);
+            
         }
     }
 }

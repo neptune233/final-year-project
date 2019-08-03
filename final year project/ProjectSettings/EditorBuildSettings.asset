@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/2_1.unity
     guid: 66fa40755a77d6b4594644c6c893844d
+  - enabled: 0
+    path: Assets/DH Notation Tutorial.unity
+    guid: fd78b426095f5fe46b5c9bbcb20e126a
   m_configObjects: {}

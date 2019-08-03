@@ -38,8 +38,8 @@ public class Inputfield : MonoBehaviour
         x=  GetRelativePosition(origin, point.transform.position).x/20;
         y = GetRelativePosition(origin, point.transform.position).y/20;
         z = GetRelativePosition(origin, point.transform.position).z/20;
-        textmesh.GetComponent<TextMesh>().text= "(" + x.ToString() + "," + y.ToString() + "," + z.ToString() + ")";// show the relative coordinate of object
-        position.text ="("+a.ToString()+","+ b.ToString()+","+ c.ToString()+")";
+       // textmesh.GetComponent<TextMesh>().text= "(" + x.ToString() + "," + y.ToString() + "," + z.ToString() + ")";// show the relative coordinate of object
+        //position.text ="("+a.ToString()+","+ b.ToString()+","+ c.ToString()+")";
         
     }
 
