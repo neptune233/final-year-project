@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DHnotationTutorial : MonoBehaviour
 {
     public GameObject[] views;
     public GameObject[] frames;
+    public GameObject error_message;
+    public GameObject error_block;
+    public GameObject[] parameters;
+
     public int progress_stage;
     public int option_stage; // 1,2,3 ==> choose z-axis  /4,5 ==> choose frame 1  /6,7 ==> choose frame 2  /10,11,12 ==> choose frame 3
     public int option;
     public int correct_option;
+
+    private string error_z_axis_selection = "NOTE: The Z axis in each joint need to be assigned along the joint rotation axis";
+    private string error_x_axis_selection = "NOTE: tHE X axis in each joint need to be assigned normal to both Z axises in the current joint and the next joint pointing to the Z axis in the next joint";
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +25,7 @@ public class DHnotationTutorial : MonoBehaviour
         progress_stage = 1;
         option_stage = 1;
         option = 1;
+
     }
 
     // Update is called once per frame
@@ -28,11 +37,13 @@ public class DHnotationTutorial : MonoBehaviour
                 views[0].SetActive(true);
                 views[1].SetActive(false);
                 views[2].SetActive(false);
+                views[3].SetActive(false);
                 break;
             case 2:
                 views[0].SetActive(false);
                 views[1].SetActive(true);
                 views[2].SetActive(false);
+                views[3].SetActive(false);
 
                 frames[0].SetActive(true);
                 frames[10].SetActive(true);
@@ -41,11 +52,23 @@ public class DHnotationTutorial : MonoBehaviour
                 views[0].SetActive(false);
                 views[1].SetActive(false);
                 views[2].SetActive(true);
+                views[3].SetActive(false);
 
                 option_progress();
 
                 break;
             case 4:
+                views[0].SetActive(false);
+                views[1].SetActive(false);
+                views[2].SetActive(false);
+                views[3].SetActive(true);
+
+                parameters[0].SetActive(true);
+                parameters[1].SetActive(true);
+                parameters[2].SetActive(true);
+                parameters[3].SetActive(true);
+                parameters[4].SetActive(true);
+                parameters[5].SetActive(true);
                 break;
             case 5:
                 break;
@@ -79,12 +102,17 @@ public class DHnotationTutorial : MonoBehaviour
         //}
     }
 
+    public void Back_btn()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void Next_stage()
     {
         progress_stage += 1;
     }
 
-    public void Back_btn()
+    public void Back_MainScene()
     {
         option_stage -= 1;
     }
@@ -116,8 +144,13 @@ public class DHnotationTutorial : MonoBehaviour
         }
         else
         {
-            Debug.Log("Error");
+            error_block.gameObject.SetActive(true);
         }
+    }
+
+    public void Okay_btn()
+    {
+        error_block.gameObject.SetActive(false);
     }
 
     private void option_progress()
@@ -157,6 +190,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 1;
+                error_message.GetComponent<TextEditor>().text = "test";
 
                 break;
             case 2:
@@ -193,6 +227,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 3;
+                error_message.GetComponent<TextEditor>().text = "test";
                 break;
             case 3:
 
@@ -229,7 +264,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 3;
-
+                error_message.GetComponent<TextEditor>().text = "test";
                 break;
             case 4:
                 if (option == 1)
@@ -254,6 +289,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 1;
+                error_message.GetComponent<TextEditor>().text = "test";
                 break;
             case 5:
                 if (option == 1)
@@ -278,6 +314,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
                 
                 correct_option = 2;
+                error_message.GetComponent<TextEditor>().text = "test";
                 break;
             case 6:
                 if (option == 1)
@@ -302,6 +339,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 1;
+                error_message.GetComponent<TextEditor>().text = "test";
                 break;
             case 7:
                 break;
