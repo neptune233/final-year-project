@@ -14,4 +14,9 @@ public class DHSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
+
+    public void Test_Scene()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
