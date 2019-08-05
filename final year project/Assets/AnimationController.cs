@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class AnimationController : MonoBehaviour
@@ -39,6 +40,11 @@ public class AnimationController : MonoBehaviour
         btn.onClick.AddListener(pauseAnim);
     }
 
+    public void Back_MainScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     private void Update()
     {
         
@@ -61,47 +67,52 @@ public class AnimationController : MonoBehaviour
             Steps[6].SetActive(false);
         }
 
-        if (myTime > 3.0 && myTime < 6.0)
+        if (myTime > 2.0 && myTime < 10.0)
         {
             Steps[0].SetActive(true);
         }
 
-        if (myTime > 6.0 && myTime < 9.0)
+        if (myTime > 10.0 && myTime < 30.0)
         {
             Steps[0].SetActive(false);
             Steps[1].SetActive(true);
         }
 
-        if (myTime > 9.0 && myTime < 12.0)
+        if (myTime > 28.0 && myTime < 30.0)
         {
             Steps[1].SetActive(false);
             Steps[2].SetActive(true);
         }
 
-        if (myTime > 12.0 && myTime < 15.0)
+        if (myTime > 30.0 && myTime < 34.0)
         {
             Steps[2].SetActive(false);
             Steps[3].SetActive(true);
         }
 
-        if (myTime > 15.0 && myTime < 18.0)
+        if (myTime > 34.0 && myTime < 37.0)
         {
             Steps[3].SetActive(false);
             Steps[4].SetActive(true);
         }
 
-        if (myTime > 18.0 && myTime < 21.0)
+        if (myTime > 37.0 && myTime < 42.0)
         {
             Steps[4].SetActive(false);
             Steps[5].SetActive(true);
         }
 
-        if (myTime > 21.0 && myTime < 24.0)
+        if (myTime > 42.0 && myTime < 48.0)
         {
             Steps[5].SetActive(false);
             Steps[6].SetActive(true);
         }
 
-     
+        if (myTime > 48.0 && myTime < 51.0)
+        {
+            Steps[5].SetActive(false);
+            Steps[6].SetActive(true);
+        }
+
     }
 }
