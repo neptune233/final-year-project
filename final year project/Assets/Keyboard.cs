@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Keyboard : MonoBehaviour
 {
     public InputField[] InputBlock;
     public int current_inputfield = 0;
+    public GameObject Board;
 
     public void InputString(string inputstring)
     {
@@ -29,4 +31,34 @@ public class Keyboard : MonoBehaviour
             current_inputfield = InputBlock.Length;
         }
     }
+
+    private void Update()
+    {
+
+        
+        if (EventSystem.current.currentSelectedGameObject != null)
+        {
+            Debug.Log(EventSystem.current.currentSelectedGameObject.tag.ToString());
+        }
+
+
+       if (EventSystem.current.currentSelectedGameObject!=null && EventSystem.current.currentSelectedGameObject.tag.ToString()=="Input")
+        {
+            Board.SetActive(true);
+        }
+        else
+        {
+            Board.SetActive(false);
+        }
+
+
+        
+
+
+    }
+        
+    
+
+
+
 }

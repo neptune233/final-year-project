@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Model
+  - Coordinate
+  - Axis
+  - Z-axis
+  - Y-axis
+  - X-axis
+  - Input
   layers:
   - Default
   - TransparentFX

@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: monash univeristy
-  productName: final yeaer project
+  productName: 3d scan test
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -139,7 +139,7 @@ PlayerSettings:
       sharedDepthBuffer: 0
       dashSupport: 0
     enable360StereoCapture: 0
-  protectGraphicsMemory: 0
+  protectGraphicsMemory: 1
   enableFrameTimingStats: 0
   useHDRDisplay: 0
   m_ColorGamuts: 00000000
@@ -381,6 +381,9 @@ PlayerSettings:
     m_Devices:
     - Oculus
     - OpenVR
+  - m_BuildTarget: Android
+    m_Enabled: 0
+    m_Devices: []
   m_BuildTargetEnableVuforiaSettings:
   - m_BuildTarget: Standalone
     m_Enabled: 1
