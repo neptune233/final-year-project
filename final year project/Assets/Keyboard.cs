@@ -34,6 +34,14 @@ public class Keyboard : MonoBehaviour
 
     private void Update()
     {
+
+        
+        if (EventSystem.current.currentSelectedGameObject != null)
+        {
+            Debug.Log(EventSystem.current.currentSelectedGameObject.tag.ToString());
+        }
+
+
        if (EventSystem.current.currentSelectedGameObject!=null && EventSystem.current.currentSelectedGameObject.tag.ToString()=="Input")
         {
             Board.SetActive(true);
