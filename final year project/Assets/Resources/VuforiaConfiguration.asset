@@ -45,10 +45,8 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
-    - arm_OT
     - screenshot
     dataSetsToActivate:
-    - arm_OT
     - screenshot
   videoBackground:
     clippingMode: 0
