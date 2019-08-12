@@ -180,7 +180,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 3.51, y: 0, z: -0.03999901}
+  m_ConnectedAnchor: {x: 3.5099988, y: 0, z: -0.03999901}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -799,7 +799,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ac9e4823c2fda1f43b6f5713136a6991, type: 2}
+      objectReference: {fileID: 2100000, guid: eeaacf09325bd5b49b4732ec89c820c3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9fc868fef1435d48b73b537e04e9cfe, type: 3}
 --- !u!4 &279946746 stripped
@@ -1280,7 +1280,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ac9e4823c2fda1f43b6f5713136a6991, type: 2}
+      objectReference: {fileID: 2100000, guid: d100f4ff657e61a4baab7d23554b67af, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be2d0228b68c25b428c508837a45f947, type: 3}
 --- !u!4 &456063110 stripped
@@ -1959,7 +1959,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ac9e4823c2fda1f43b6f5713136a6991, type: 2}
+      objectReference: {fileID: 2100000, guid: 1be5de17c487c624d94e81e38ca8c426, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3043c9d921d86f14aad22799348d4775, type: 3}
 --- !u!4 &678797065 stripped
@@ -3064,8 +3064,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 200, y: 20}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 450, y: 80}
+  m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921411677
 MonoBehaviour:
@@ -3785,6 +3785,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 1447180929}
+    - target: {fileID: 3300000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 2004266397}
     - target: {fileID: 11400000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 3}
       propertyPath: mInitializedInEditor
       value: 1
@@ -3809,10 +3813,6 @@ PrefabInstance:
       propertyPath: mHeight
       value: 15.615385
       objectReference: {fileID: 0}
-    - target: {fileID: 3300000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 2004266397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 384a0d8cc71cef74a873b3353337ea2c, type: 3}
 --- !u!4 &1207022488 stripped
@@ -4352,7 +4352,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.12, y: 0, z: 2.250001}
+  m_ConnectedAnchor: {x: 0.12000122, y: 0, z: 2.2500005}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -4704,8 +4704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 0, y: 80}
+  m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1528773194
 MonoBehaviour:
@@ -5569,10 +5569,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2048, y: 1536}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -6074,8 +6074,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -200, y: 20}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: -450, y: 80}
+  m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808927320
 MonoBehaviour:
@@ -6420,7 +6420,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ac9e4823c2fda1f43b6f5713136a6991, type: 2}
+      objectReference: {fileID: 2100000, guid: b321a2b6faeecea418c7e9888d48e342, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f47d1aa0c538f1a4bae40233561699ca, type: 3}
 --- !u!1 &1839099396 stripped
@@ -6978,7 +6978,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0, z: 1.0900003}
+  m_ConnectedAnchor: {x: 0, y: 0, z: 1.09}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0

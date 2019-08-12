@@ -11,6 +11,10 @@ public class DHnotationTutorial : MonoBehaviour
     public GameObject error_block;
     public GameObject[] parameters;
 
+    public GameObject[] DH_Arm;
+    public Material[] Materials;
+    public bool Transparent_State = true;
+
     public int progress_stage;
     public int option_stage; // 1,2,3 ==> choose z-axis  /4,5 ==> choose frame 1  /6,7 ==> choose frame 2  /10,11,12 ==> choose frame 3
     public int option;
@@ -31,6 +35,21 @@ public class DHnotationTutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Transparent_State)
+        {
+            DH_Arm[0].GetComponent<Renderer>().material = Materials[4];
+            DH_Arm[1].GetComponent<Renderer>().material = Materials[5];
+            DH_Arm[2].GetComponent<Renderer>().material = Materials[6];
+            DH_Arm[3].GetComponent<Renderer>().material = Materials[7];
+        }
+        else if(!Transparent_State)
+        {
+            DH_Arm[0].GetComponent<Renderer>().material = Materials[0];
+            DH_Arm[1].GetComponent<Renderer>().material = Materials[1];
+            DH_Arm[2].GetComponent<Renderer>().material = Materials[2];
+            DH_Arm[3].GetComponent<Renderer>().material = Materials[3];
+        }
+
         switch(progress_stage)
         {
             case 1:
@@ -100,6 +119,11 @@ public class DHnotationTutorial : MonoBehaviour
 
         //        break;
         //}
+    }
+
+    public void Material_Change()
+    {
+        Transparent_State = !Transparent_State;
     }
 
     public void Back_btn()
@@ -190,7 +214,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 1;
-                error_message.GetComponent<TextEditor>().text = "test";
+                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
 
                 break;
             case 2:
@@ -227,7 +251,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 3;
-                error_message.GetComponent<TextEditor>().text = "test";
+                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
                 break;
             case 3:
 
@@ -264,7 +288,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 3;
-                error_message.GetComponent<TextEditor>().text = "test";
+                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
                 break;
             case 4:
                 if (option == 1)
@@ -289,7 +313,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 1;
-                error_message.GetComponent<TextEditor>().text = "test";
+                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
                 break;
             case 5:
                 if (option == 1)
@@ -314,7 +338,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
                 
                 correct_option = 2;
-                error_message.GetComponent<TextEditor>().text = "test";
+                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
                 break;
             case 6:
                 if (option == 1)
@@ -339,7 +363,7 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 1;
-                error_message.GetComponent<TextEditor>().text = "test";
+                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
                 break;
             case 7:
                 break;
