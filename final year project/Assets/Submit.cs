@@ -43,7 +43,7 @@ public class Submit : MonoBehaviour
     public GameObject Matrix2;
     public GameObject Matrix3;
     public GameObject Matrix4;
-
+    public GameObject Instruction9;
 
 
     // input the number of matrix
@@ -658,6 +658,7 @@ public class Submit : MonoBehaviour
         }
 
         //data for matrix4;
+        /*
         bool error4 = true;
         for (int i = 0; i < 16; i++)
         {
@@ -687,6 +688,19 @@ public class Submit : MonoBehaviour
             Output4.m33 = float.Parse(M4[15].text);
             Debug.Log(Output4);
         }
+        */
+        if(error1 && error2 && error3 )
+        {
+            Step1.SetActive(true);
+            Step2.SetActive(true);
+            Step3.SetActive(true);
+            Matrix1.SetActive(false);
+            Matrix2.SetActive(false);
+            Matrix3.SetActive(false);
+            Matrix4.SetActive(false);
+            Instruction9.SetActive(false);
+        }
+
     }
 }
 

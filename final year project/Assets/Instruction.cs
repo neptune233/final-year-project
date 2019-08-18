@@ -47,6 +47,7 @@ public class Instruction : MonoBehaviour {
     public InputField[] M1;
     public InputField[] M2;
     public InputField[] M3;
+    public GameObject[] WrongBlock;
     //public Text matrix2;
     //public Text matrix3;
     public GameObject Right1;
@@ -310,6 +311,8 @@ public class Instruction : MonoBehaviour {
         }
     }
     */
+
+    /*
     public void Checkmatrix()
     {
         bool state1 = false;
@@ -375,9 +378,208 @@ public class Instruction : MonoBehaviour {
             Button.SetActive(true);
         }
     }
+    */
+    public void Checkmatrix()
+    {
+
+        bool error2 = true;
+        float temp;
+
+        for (int i = 0; i < 16; i++)
+        {
+            if (float.TryParse(M2[i].text, out temp) == false)
+            {
+                error2 = false;
+                break;
+            }
+        }
+        if (error2 == true)
+        {
+            if (Mathf.Abs(float.Parse(M2[0].text) - 1f) > 0.01f)
+            {
+                WrongBlock[0].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[1].text)) > 0.01f)
+            {
+                WrongBlock[1].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[2].text)) > 0.01f)
+            {
+                WrongBlock[2].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[3].text)) > 0.01f)
+            {
+                WrongBlock[3].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[4].text)) > 0.01f)
+            {
+                WrongBlock[4].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[5].text) - 0.707f) > 0.01f)
+            {
+                WrongBlock[5].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[6].text) + 0.707f) > 0.01f)
+            {
+                WrongBlock[6].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[7].text)) > 0.01f)
+            {
+                WrongBlock[7].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[8].text)) > 0.01f)
+            {
+                WrongBlock[8].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[9].text) - 0.707f) > 0.01f)
+            {
+                WrongBlock[9].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[10].text) - 0.707f) > 0.01f)
+            {
+                WrongBlock[10].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[11].text)) > 0.01f)
+            {
+                WrongBlock[11].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[12].text)) > 0.01f)
+            {
+                WrongBlock[12].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[13].text)) > 0.01f)
+            {
+                WrongBlock[13].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[14].text)) > 0.01f)
+            {
+                WrongBlock[14].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M2[15].text) - 1f) > 0.01f)
+            {
+                WrongBlock[15].SetActive(true);
+            }
+        }
+
+        bool error3 = true;
+        
+
+        for (int i = 0; i < 16; i++)
+        {
+            if (float.TryParse(M3[i].text, out temp) == false)
+            {
+                error3 = false;
+                break;
+            }
+        }
+        if (error3 == true)
+        {
+            if (Mathf.Abs(float.Parse(M3[0].text) - 0.5f) > 0.01f)
+            {
+                WrongBlock[16].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[1].text)+0.866f) > 0.01f)
+            {
+                WrongBlock[17].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[2].text)) > 0.01f)
+            {
+                WrongBlock[18].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[3].text)) > 0.01f)
+            {
+                WrongBlock[19].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[4].text)-0.866f) > 0.01f)
+            {
+                WrongBlock[20].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[5].text) - 0.5f) > 0.01f)
+            {
+                WrongBlock[21].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[6].text)) > 0.01f)
+            {
+                WrongBlock[22].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[7].text)) > 0.01f)
+            {
+                WrongBlock[23].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[8].text)) > 0.01f)
+            {
+                WrongBlock[24].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[9].text)) > 0.01f)
+            {
+                WrongBlock[25].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[10].text) - 1f) > 0.01f)
+            {
+                WrongBlock[26].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[11].text)) > 0.01f)
+            {
+                WrongBlock[27].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[12].text)) > 0.01f)
+            {
+                WrongBlock[28].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[13].text)) > 0.01f)
+            {
+                WrongBlock[29].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[14].text)) > 0.01f)
+            {
+                WrongBlock[30].SetActive(true);
+            }
+            if (Mathf.Abs(float.Parse(M3[15].text) - 1f) > 0.01f)
+            {
+                WrongBlock[31].SetActive(true);
+            }
+        }
+
+    }
+
+        /*
+        bool error3 = true;
+
+        for (int i = 0; i < 16; i++)
+        {
+            if (float.TryParse(M3[i].text, out temp) == false)
+            {
+                error3 = false;
+                break;
+            }
+        }
+        if (error3 == true)
+        {
+            if (Mathf.Abs(float.Parse(M3[0].text) - 0.5f) < 0.01f && Mathf.Abs(float.Parse(M3[1].text) + 0.866f) < 0.01f && Mathf.Abs(float.Parse(M3[2].text)) < 0.01f && Mathf.Abs(float.Parse(M3[3].text)) < 0.01f && Mathf.Abs(float.Parse(M3[4].text) - 0.866f) < 0.01f && Mathf.Abs(float.Parse(M3[5].text) - 0.5f) < 0.01f && Mathf.Abs(float.Parse(M3[6].text)) < 0.01f && Mathf.Abs(float.Parse(M3[7].text)) < 0.01f && Mathf.Abs(float.Parse(M3[8].text)) < 0.01f && Mathf.Abs(float.Parse(M3[9].text)) < 0.01f && Mathf.Abs(float.Parse(M3[10].text) - 1f) < 0.01f && Mathf.Abs(float.Parse(M3[11].text)) < 0.01f && Mathf.Abs(float.Parse(M3[12].text)) < 0.01f && Mathf.Abs(float.Parse(M3[13].text)) < 0.01f && Mathf.Abs(float.Parse(M3[14].text)) < 0.01 && Mathf.Abs(float.Parse(M3[15].text) - 1f) < 0.01f)
+            {
+                Right2.SetActive(true);
+                Wrong2.SetActive(false);
+                state2 = true;
+            }
+            else
+            {
+                Wrong2.SetActive(true);
+                Right2.SetActive(false);
+
+            }
+        }
 
 
-    /*
+        if (state1 == true && state2 == true)
+        {
+            Instruction9.SetActive(false);
+            Instruction10.SetActive(true);
+            Button.SetActive(true);
+        }
+    }
+    
+
+    
     public void Check0T3()
     {
         bool error4 = true;

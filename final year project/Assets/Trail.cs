@@ -8,12 +8,28 @@ public class Trail : MonoBehaviour {
     public TrailRenderer trail_x;
     public TrailRenderer trail_y;
     public TrailRenderer trail_z;
+    public TrailRenderer trail_xx;
+    public TrailRenderer trail_yy;
+    public TrailRenderer trail_zz;
+    public GameObject UserxRef;
+    public GameObject UseryRef;
+    public GameObject UserzRef;
 
-public void Cleartrail()
+    public void Cleartrail()
     {
         trail_x.Clear();
         trail_y.Clear();
         trail_z.Clear();
+        //trail_xx.Clear();
+        //trail_yy.Clear();
+        //trail_zz.Clear();
+    }
+
+    public void Refenable()
+    {
+        UserxRef.SetActive(true);
+        UseryRef.SetActive(true);
+        UserzRef.SetActive(true);
     }
 
 }

@@ -35,9 +35,9 @@ public class Inputfield : MonoBehaviour
         a = cube.transform.localPosition.x * 40;
         b = (cube.transform.localPosition.y -0.3f)*40;
         c = cube.transform.localPosition.z * 40;
-        x=  GetRelativePosition(origin, point.transform.position).x/20;
-        y = GetRelativePosition(origin, point.transform.position).y/20;
-        z = GetRelativePosition(origin, point.transform.position).z/20;
+       // x=  GetRelativePosition(origin, point.transform.position).x/20;
+       // y = GetRelativePosition(origin, point.transform.position).y/20;
+       // z = GetRelativePosition(origin, point.transform.position).z/20;
        // textmesh.GetComponent<TextMesh>().text= "(" + x.ToString() + "," + y.ToString() + "," + z.ToString() + ")";// show the relative coordinate of object
         //position.text ="("+a.ToString()+","+ b.ToString()+","+ c.ToString()+")";
         
