@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Test : MonoBehaviour
 {
@@ -130,6 +131,10 @@ public class Test : MonoBehaviour
         }
     }
    
+    public void Back_btn()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     //// Update is called once per frame
     //public void Joint1(float changes)

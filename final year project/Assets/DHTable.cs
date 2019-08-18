@@ -4,12 +4,29 @@ using UnityEngine;
 
 public class DHTable : MonoBehaviour
 {
-    public void OninputfieldClick ()
-    {
-        Debug.Log(this.gameObject.name);
-        GameObject.Find("keyboard").GetComponent<Keyboard>().current_inputfield = int.Parse(this.gameObject.name);
+    public int Selected_Index;
+    public string Answer;
+    public string Selected_axis;
 
+    public void DHTable_btn(string answer)
+    {
+        Answer = answer;
     }
 
-   
+    private void Update()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            
+            if (hit.collider.gameObject.tag == "Axis")
+            {
+                Selected_axis = hit.collider.gameObject.name;
+            }
+
+            
+        }
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DHnotationTutorial : MonoBehaviour
@@ -20,8 +21,8 @@ public class DHnotationTutorial : MonoBehaviour
     public int option;
     public int correct_option;
 
-    private string error_z_axis_selection = "NOTE: The Z axis in each joint need to be assigned along the joint rotation axis";
-    private string error_x_axis_selection = "NOTE: tHE X axis in each joint need to be assigned normal to both Z axises in the current joint and the next joint pointing to the Z axis in the next joint";
+    public string error_z_axis_selection = "NOTE: The Z axis in each joint need to be assigned along the joint rotation axis";
+    public string error_x_axis_selection = "NOTE: The X axis in each joint need to be assigned normal to both Z axises in the current joint and the next joint pointing to the Z axis in the next joint";
 
     // Start is called before the first frame update
     void Start()
@@ -128,7 +129,7 @@ public class DHnotationTutorial : MonoBehaviour
 
     public void Back_btn()
     {
-        SceneManager.LoadScene(0);
+        option_stage -= 1;
     }
 
     public void Next_stage()
@@ -138,8 +139,8 @@ public class DHnotationTutorial : MonoBehaviour
 
     public void Back_MainScene()
     {
-        option_stage -= 1;
-    }
+        SceneManager.LoadScene(0);
+    }   
 
     public void Previous_option()
     {
@@ -214,7 +215,8 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 1;
-                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                //error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                error_message.GetComponent<Text>().text = error_z_axis_selection;
 
                 break;
             case 2:
@@ -251,7 +253,8 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 3;
-                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                //error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                error_message.GetComponent<Text>().text = error_z_axis_selection;
                 break;
             case 3:
 
@@ -288,7 +291,8 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 3;
-                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                //error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                error_message.GetComponent<Text>().text = error_z_axis_selection;
                 break;
             case 4:
                 if (option == 1)
@@ -313,7 +317,8 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 1;
-                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                //error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                error_message.GetComponent<Text>().text = error_x_axis_selection;
                 break;
             case 5:
                 if (option == 1)
@@ -338,7 +343,8 @@ public class DHnotationTutorial : MonoBehaviour
                 }
                 
                 correct_option = 2;
-                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                //error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                error_message.GetComponent<Text>().text = error_x_axis_selection;
                 break;
             case 6:
                 if (option == 1)
@@ -363,7 +369,8 @@ public class DHnotationTutorial : MonoBehaviour
                 }
 
                 correct_option = 1;
-                error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                //error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
+                error_message.GetComponent<Text>().text = error_x_axis_selection;
                 break;
             case 7:
                 break;
