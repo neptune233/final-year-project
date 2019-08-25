@@ -30,8 +30,8 @@ public class MoveObejct_Directly : MonoBehaviour
 
         if (Submit.NumofStep == 1)
         {
-            q1 = Transformation_Matrix.GetRotation(Submit.Caculate1);
-            v1 = Transformation_Matrix.GetPostion(Submit.Caculate1) / 40;
+            q1 = Transformation_Matrix.GetRotation(Submit.Userstep1);
+            v1 = Transformation_Matrix.GetPostion(Submit.Userstep1) / 40;
 
             Newposition1 = Newposition1 + v1;
             Debug.Log(Newposition1);
@@ -39,13 +39,13 @@ public class MoveObejct_Directly : MonoBehaviour
         }
         if (Submit.NumofStep == 2)
         {
-            q1 = Transformation_Matrix.GetRotation(Submit.Caculate1);
-            v1 = Transformation_Matrix.GetPostion(Submit.Caculate1) / 40;
+            q1 = Transformation_Matrix.GetRotation(Submit.Userstep1);
+            v1 = Transformation_Matrix.GetPostion(Submit.Userstep1) / 40;
 
-            q2 = Transformation_Matrix.GetRotation(Submit.Caculate1 * Submit.Caculate2);
-            v2 = Transformation_Matrix.GetPostion(Submit.Caculate1 * Submit.Caculate2) / 40;
+            q2 = Transformation_Matrix.GetRotation(Submit.Userstep1 * Submit.Userstep2);
+            v2 = Transformation_Matrix.GetPostion(Submit.Userstep1 * Submit.Userstep2) / 40;
 
-            Debug.Log(Submit.Caculate2);
+            Debug.Log(Submit.Userstep2);
             Newposition1 = Newposition1 + v1;
             Newposition2 = Newposition2 + v2;
 
@@ -54,16 +54,16 @@ public class MoveObejct_Directly : MonoBehaviour
         }
         if (Submit.NumofStep == 3)
         {
-            q1 = Transformation_Matrix.GetRotation(Submit.Caculate1);
-            v1 = Transformation_Matrix.GetPostion(Submit.Caculate1) / 40;
+            q1 = Transformation_Matrix.GetRotation(Submit.Userstep1);
+            v1 = Transformation_Matrix.GetPostion(Submit.Userstep1) / 40;
 
-            q2 = Transformation_Matrix.GetRotation(Submit.Caculate1 * Submit.Caculate2);
-            v2 = Transformation_Matrix.GetPostion(Submit.Caculate1 * Submit.Caculate2) / 40;
+            q2 = Transformation_Matrix.GetRotation(Submit.Userstep1 * Submit.Userstep2);
+            v2 = Transformation_Matrix.GetPostion(Submit.Userstep1 * Submit.Userstep2) / 40;
 
 
 
-            q3 = Transformation_Matrix.GetRotation(Submit.Caculate1 * Submit.Caculate2 * Submit.Caculate3);
-            v3 = Transformation_Matrix.GetPostion(Submit.Caculate1 * Submit.Caculate2 * Submit.Caculate3) / 40;
+            q3 = Transformation_Matrix.GetRotation(Submit.Userstep1 * Submit.Userstep2 * Submit.Userstep3);
+            v3 = Transformation_Matrix.GetPostion(Submit.Userstep1 * Submit.Userstep2 * Submit.Userstep3) / 40;
 
 
 
@@ -73,20 +73,20 @@ public class MoveObejct_Directly : MonoBehaviour
         }
         if (Submit.NumofStep == 4)
         {
-            q1 = Transformation_Matrix.GetRotation(Submit.Caculate1);
-            v1 = Transformation_Matrix.GetPostion(Submit.Caculate1) / 40;
+            q1 = Transformation_Matrix.GetRotation(Submit.Userstep1);
+            v1 = Transformation_Matrix.GetPostion(Submit.Userstep1) / 40;
 
-            q2 = Transformation_Matrix.GetRotation(Submit.Caculate1 * Submit.Caculate2);
-            v2 = Transformation_Matrix.GetPostion(Submit.Caculate1 * Submit.Caculate2) / 40;
+            q2 = Transformation_Matrix.GetRotation(Submit.Userstep1 * Submit.Userstep2);
+            v2 = Transformation_Matrix.GetPostion(Submit.Userstep1 * Submit.Userstep2) / 40;
 
-            q3 = Transformation_Matrix.GetRotation(Submit.Caculate1 * Submit.Caculate2 * Submit.Caculate3);
-            v3 = Transformation_Matrix.GetPostion(Submit.Caculate1 * Submit.Caculate2 * Submit.Caculate3) / 40;
+            q3 = Transformation_Matrix.GetRotation(Submit.Userstep1 * Submit.Userstep2 * Submit.Userstep3);
+            v3 = Transformation_Matrix.GetPostion(Submit.Userstep1 * Submit.Userstep2 * Submit.Userstep3) / 40;
 
             
-            Matrix4x4 a = Submit.Caculate1 * Submit.Caculate2 * Submit.Caculate3;
-            a.m03 = Submit.Caculate4.m03;
-            a.m13 = Submit.Caculate4.m13;
-            a.m23 = Submit.Caculate4.m23;
+            Matrix4x4 a = Submit.Userstep1 * Submit.Userstep2 * Submit.Userstep3;
+            a.m03 = Submit.Userstep4.m03;
+            a.m13 = Submit.Userstep4.m13;
+            a.m23 = Submit.Userstep4.m23;
 
             q4 = Transformation_Matrix.GetRotation(a);
             v4 = Transformation_Matrix.GetPostion(a) / 40;

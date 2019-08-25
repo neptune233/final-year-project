@@ -69,7 +69,18 @@ public class Instruction : MonoBehaviour {
     public GameObject Wrong4;
     public GameObject Hint2;
     public GameObject Check;
-    
+
+    public GameObject InputCorrect;
+    public GameObject InputWrong;
+    public GameObject Matrix2;
+    public GameObject Matrix3;
+    public GameObject Submatrix;
+
+    public GameObject Ans;
+    public GameObject User;
+    public CanvasGroup submitbutton;
+  
+   
     // Function for Move Method
     public void Button_1()
     {
@@ -399,65 +410,129 @@ public class Instruction : MonoBehaviour {
             {
                 WrongBlock[0].SetActive(true);
             }
+            else
+            {
+                WrongBlock[0].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M2[1].text)) > 0.01f)
             {
                 WrongBlock[1].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[1].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M2[2].text)) > 0.01f)
             {
                 WrongBlock[2].SetActive(true);
             }
+            else
+            {
+                WrongBlock[2].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M2[3].text)) > 0.01f)
             {
                 WrongBlock[3].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[3].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M2[4].text)) > 0.01f)
             {
                 WrongBlock[4].SetActive(true);
             }
+            else
+            {
+                WrongBlock[4].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M2[5].text) - 0.707f) > 0.01f)
             {
                 WrongBlock[5].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[5].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M2[6].text) + 0.707f) > 0.01f)
             {
                 WrongBlock[6].SetActive(true);
             }
+            else
+            {
+                WrongBlock[6].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M2[7].text)) > 0.01f)
             {
                 WrongBlock[7].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[7].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M2[8].text)) > 0.01f)
             {
                 WrongBlock[8].SetActive(true);
             }
+            else
+            {
+                WrongBlock[8].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M2[9].text) - 0.707f) > 0.01f)
             {
                 WrongBlock[9].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[9].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M2[10].text) - 0.707f) > 0.01f)
             {
                 WrongBlock[10].SetActive(true);
             }
+            else
+            {
+                WrongBlock[10].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M2[11].text)) > 0.01f)
             {
                 WrongBlock[11].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[11].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M2[12].text)) > 0.01f)
             {
                 WrongBlock[12].SetActive(true);
             }
+            else
+            {
+                WrongBlock[12].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M2[13].text)) > 0.01f)
             {
                 WrongBlock[13].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[13].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M2[14].text)) > 0.01f)
             {
                 WrongBlock[14].SetActive(true);
             }
+            else
+            {
+                WrongBlock[14].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M2[15].text) - 1f) > 0.01f)
             {
                 WrongBlock[15].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[15].SetActive(false);
             }
         }
 
@@ -478,66 +553,152 @@ public class Instruction : MonoBehaviour {
             {
                 WrongBlock[16].SetActive(true);
             }
+            else
+            {
+                WrongBlock[16].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M3[1].text)+0.866f) > 0.01f)
             {
                 WrongBlock[17].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[17].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M3[2].text)) > 0.01f)
             {
                 WrongBlock[18].SetActive(true);
             }
+            else
+            {
+                WrongBlock[18].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M3[3].text)) > 0.01f)
             {
                 WrongBlock[19].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[19].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M3[4].text)-0.866f) > 0.01f)
             {
                 WrongBlock[20].SetActive(true);
             }
+            else
+            {
+                WrongBlock[20].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M3[5].text) - 0.5f) > 0.01f)
             {
                 WrongBlock[21].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[21].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M3[6].text)) > 0.01f)
             {
                 WrongBlock[22].SetActive(true);
             }
+            else
+            {
+                WrongBlock[22].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M3[7].text)) > 0.01f)
             {
                 WrongBlock[23].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[23].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M3[8].text)) > 0.01f)
             {
                 WrongBlock[24].SetActive(true);
             }
+            else
+            {
+                WrongBlock[24].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M3[9].text)) > 0.01f)
             {
                 WrongBlock[25].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[25].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M3[10].text) - 1f) > 0.01f)
             {
                 WrongBlock[26].SetActive(true);
             }
+            else
+            {
+                WrongBlock[26].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M3[11].text)) > 0.01f)
             {
                 WrongBlock[27].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[27].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M3[12].text)) > 0.01f)
             {
                 WrongBlock[28].SetActive(true);
             }
+            else
+            {
+                WrongBlock[28].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M3[13].text)) > 0.01f)
             {
                 WrongBlock[29].SetActive(true);
+            }
+            else
+            {
+                WrongBlock[29].SetActive(false);
             }
             if (Mathf.Abs(float.Parse(M3[14].text)) > 0.01f)
             {
                 WrongBlock[30].SetActive(true);
             }
+            else
+            {
+                WrongBlock[30].SetActive(false);
+            }
             if (Mathf.Abs(float.Parse(M3[15].text) - 1f) > 0.01f)
             {
                 WrongBlock[31].SetActive(true);
             }
+            else
+            {
+                WrongBlock[31].SetActive(false);
+            }
+        }
+        bool Input = true;
+
+        for(int j = 0; j < 32; j++)
+        {
+            if (WrongBlock[j].activeInHierarchy == true)
+            {
+                Input = false;
+            }
+        }
+
+        if (Input==true)
+        {
+            InputCorrect.SetActive(true);
+        }
+        else
+        {
+            InputWrong.SetActive(true);
+            Matrix3.SetActive(true);
+            Matrix2.SetActive(true);
+            Submatrix.SetActive(true);
+
         }
 
     }
@@ -714,6 +875,57 @@ public class Instruction : MonoBehaviour {
         }
     }
 
+    public void Reset()
+    {
+        Ans.transform.localPosition = new Vector3(0, 0.2f, 0.18f);
+        Ans.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        User.transform.localPosition = new Vector3(0, 0.2f, -0.3f);
+        User.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        Buttonid.Step = 0;
+        if (GameObject.Find("ref1"))
+        {
+            Destroy(GameObject.Find("ref1"));
+        }
+        if (GameObject.Find("ref2"))
+        {
+            Destroy(GameObject.Find("ref2"));
+        }
+        if (GameObject.Find("ref3"))
+        {
+            Destroy(GameObject.Find("ref3"));
+        }
+        if (GameObject.Find("ref4"))
+        {
+            Destroy(GameObject.Find("ref4"));
+        }
+        if (GameObject.Find("ansref1"))
+        {
+            Destroy(GameObject.Find("ansref1"));
+        }
+        if (GameObject.Find("ansref2"))
+        {
+            Destroy(GameObject.Find("ansref2"));
+        }
+        if (GameObject.Find("ansref3"))
+        {
+            Destroy(GameObject.Find("ansref3"));
+        }
+        if (GameObject.Find("ansref4"))
+        {
+            Destroy(GameObject.Find("ansref4"));
+        }
+        MoveObject_Matrix.Iscreated1 = true;
+        MoveObject_Matrix.Iscreated2 = true;
+        MoveObject_Matrix.Iscreated3 = true;
+        MoveObject_Matrix.Timer1 = 0;
+        MoveObject_Matrix.Timer2 = 0;
+    }
+    public void Show()
+    {
+        submitbutton.alpha = 1;
+       
+    }
+   
 
 }
 

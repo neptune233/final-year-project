@@ -15,6 +15,7 @@ public class Buttonid : MonoBehaviour
     public GameObject Enable;
     public GameObject Disable;
 
+
     // check which step button is pressed
     public void Stepid()
     {
@@ -34,6 +35,10 @@ public class Buttonid : MonoBehaviour
         if (EventSystem.current.currentSelectedGameObject.name == "Step4")
         {
             Step = 4;
+        }
+        if (EventSystem.current.currentSelectedGameObject.name == "End")
+        {
+            Step = 99;
         }
     }
 
@@ -79,5 +84,6 @@ public class Buttonid : MonoBehaviour
         }
     }
 
+    
 
 }

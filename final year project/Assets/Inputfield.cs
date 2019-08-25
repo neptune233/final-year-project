@@ -7,12 +7,7 @@ public class Inputfield : MonoBehaviour
    // public InputField mainInputField;
     public Text position;
     public GameObject cube;
-    float a;
-    float b;
-    float c;
-    float x;
-    float y;
-    float z;
+   
     public GameObject point;
     public GameObject textmesh;
     public Transform origin;
@@ -29,18 +24,12 @@ public class Inputfield : MonoBehaviour
         return relativePosition;
     }
 
-
-    public void Update()
+    private void Start()
     {
-        a = cube.transform.localPosition.x * 40;
-        b = (cube.transform.localPosition.y -0.3f)*40;
-        c = cube.transform.localPosition.z * 40;
-       // x=  GetRelativePosition(origin, point.transform.position).x/20;
-       // y = GetRelativePosition(origin, point.transform.position).y/20;
-       // z = GetRelativePosition(origin, point.transform.position).z/20;
-       // textmesh.GetComponent<TextMesh>().text= "(" + x.ToString() + "," + y.ToString() + "," + z.ToString() + ")";// show the relative coordinate of object
-        //position.text ="("+a.ToString()+","+ b.ToString()+","+ c.ToString()+")";
-        
+        Buttonid.Step = 0;
     }
+
+
+
 
 }

@@ -7,18 +7,20 @@ public class Reset : MonoBehaviour {
 public void OnClick()
     {
         SceneManager.LoadScene("Index");
-        MoveObject.Newposition1 = new Vector3(0, 0.3f, 0);
-        MoveObject.Newposition2 = new Vector3(0, 0.3f, 0);
-        MoveObject.Newposition3 = new Vector3(0, 0.3f, 0);
-        MoveObject.Newposition4 = new Vector3(0, 0.3f, 0);
-        MoveObejct_Directly.Newposition1 = new Vector3(0,0.3f,0);
-        MoveObejct_Directly.Newposition2 = new Vector3(0, 0.3f, 0);
-        MoveObejct_Directly.Newposition3 = new Vector3(0, 0.3f, 0);
-        MoveObejct_Directly.Newposition4 = new Vector3(0, 0.3f, 0);
+        MoveObject_Matrix.Newposition1 = new Vector3(0, 0.2f, -0.3f);
+        MoveObject_Matrix.Newposition2 = new Vector3(0, 0.2f, -0.3f);
+        MoveObject_Matrix.Newposition3 = new Vector3(0, 0.2f, -0.3f);
+        MoveObject_Matrix.Newposition4 = new Vector3(0, 0.2f, -0.3f);
+        MoveObejct_Directly.Newposition1 = new Vector3(0, 0.2f, -0.3f);
+        MoveObejct_Directly.Newposition2 = new Vector3(0, 0.2f, -0.3f);
+        MoveObejct_Directly.Newposition3 = new Vector3(0, 0.2f, -0.3f);
+        MoveObejct_Directly.Newposition4 = new Vector3(0, 0.2f, -0.3f);
 
     }
     public void Exercise1()
     {
         SceneManager.LoadScene("2_1");
     }
+
+   
 }

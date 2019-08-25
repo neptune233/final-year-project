@@ -30,13 +30,7 @@ public class colour : MonoBehaviour {
     public Transform Userzcoor;
     // Use this for initialization
     void Start() {
-        ref_1_x.GetComponent<MeshRenderer>().material.color = Color.black;
-        ref_1_z.GetComponent<MeshRenderer>().material.color = Color.black;
-        ref_2_y.GetComponent<MeshRenderer>().material.color = Color.black;
-        ref_2_z.GetComponent<MeshRenderer>().material.color = Color.black;
-        ref_3_x.GetComponent<MeshRenderer>().material.color = Color.black;
-        ref_3_y.GetComponent<MeshRenderer>().material.color = Color.black;
-
+     
 
     
       

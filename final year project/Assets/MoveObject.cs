@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 
 public class MoveObject : MonoBehaviour {
-   
+   /*
     public GameObject cube;
     Quaternion q1;
     Vector3 v1;
@@ -176,6 +176,6 @@ public class MoveObject : MonoBehaviour {
     }
 
 
-
+    */
 }
 
