@@ -641,8 +641,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -787, y: -461}
-  m_SizeDelta: {x: 333.3, y: 124.9}
+  m_AnchoredPosition: {x: -806, y: -457}
+  m_SizeDelta: {x: 347.7, y: 134.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71933430
 MonoBehaviour:
@@ -677,7 +677,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Backwards 5 seconds
+  m_Text: Go to the Previous session
 --- !u!222 &71933431
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1433,7 +1433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &184291737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1905,8 +1905,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 964035778}
-        m_MethodName: Animation_Jump
-        m_Mode: 4
+        m_MethodName: Next_Step_btn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4347,7 +4347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &939882470
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4486,6 +4486,7 @@ MonoBehaviour:
   MyResumeButton: {fileID: 2010908857}
   myTime: 0
   Steps:
+  - {fileID: 78061064}
   - {fileID: 184291736}
   - {fileID: 2017994268}
   - {fileID: 857290834}
@@ -4493,12 +4494,12 @@ MonoBehaviour:
   - {fileID: 627026013}
   - {fileID: 1566531247}
   - {fileID: 1450223279}
-  - {fileID: 78061064}
   flag: 1
   animation_speed: 1
   animation_change_factor: 0.5
   Step_index: 0
   StepIndexMax: 7
+  Animation_State: 0
 --- !u!4 &964035779
 Transform:
   m_ObjectHideFlags: 0
@@ -5801,7 +5802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 786, y: -470}
+  m_AnchoredPosition: {x: 792, y: -498.45}
   m_SizeDelta: {x: 333.3, y: 124.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1346727294
@@ -5837,7 +5838,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Forwards 5 seconds
+  m_Text: Go to the Next session
 --- !u!222 &1346727295
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7581,8 +7582,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 964035778}
-        m_MethodName: Animation_Jump
-        m_Mode: 4
+        m_MethodName: Prevous_Step_btn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -45,8 +45,12 @@ MonoBehaviour:
       ContainsMagnet: 0
   databaseLoad:
     dataSetsToLoad:
+    - cube_OT
+    - arm_OT
     - screenshot
     dataSetsToActivate:
+    - cube_OT
+    - arm_OT
     - screenshot
   videoBackground:
     clippingMode: 0

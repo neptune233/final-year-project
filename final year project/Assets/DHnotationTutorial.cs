@@ -11,6 +11,7 @@ public class DHnotationTutorial : MonoBehaviour
     public GameObject error_message;
     public GameObject error_block;
     public GameObject[] parameters;
+    public GameObject DH_Table;
 
     public GameObject[] DH_Arm;
     public Material[] Materials;
@@ -21,8 +22,10 @@ public class DHnotationTutorial : MonoBehaviour
     public int option;
     public int correct_option;
 
-    public string error_z_axis_selection = "NOTE: The Z axis in each joint need to be assigned along the joint rotation axis";
-    public string error_x_axis_selection = "NOTE: The X axis in each joint need to be assigned normal to both Z axises in the current joint and the next joint pointing to the Z axis in the next joint";
+    private string error_z_axis_selection = "NOTE: The Z axis in each joint need to be assigned along the joint rotation axis";
+    private string error_x_axis_selection = "NOTE: The X axis in each joint need to be assigned normal to both Z axises in the current joint and the next joint pointing to the Z axis in the next joint";
+
+    private bool DH_Table_State = true;
 
     // Start is called before the first frame update
     void Start()
@@ -83,12 +86,15 @@ public class DHnotationTutorial : MonoBehaviour
                 views[2].SetActive(false);
                 views[3].SetActive(true);
 
+                DH_Table.SetActive(DH_Table_State);
+
                 parameters[0].SetActive(true);
                 parameters[1].SetActive(true);
                 parameters[2].SetActive(true);
                 parameters[3].SetActive(true);
                 parameters[4].SetActive(true);
                 parameters[5].SetActive(true);
+
                 break;
             case 5:
                 break;
@@ -120,6 +126,11 @@ public class DHnotationTutorial : MonoBehaviour
 
         //        break;
         //}
+    }
+
+    public void DH_table_btn()
+    {
+        DH_Table_State = !DH_Table_State;
     }
 
     public void Material_Change()
@@ -368,15 +379,17 @@ public class DHnotationTutorial : MonoBehaviour
                     frames[8].transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
                 }
 
-                correct_option = 1;
+                correct_option = 2;
                 //error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
                 error_message.GetComponent<Text>().text = error_x_axis_selection;
                 break;
             case 7:
+                progress_stage += 1;
                 break;
             default:
 
                 break;
         }
     }
+
 }

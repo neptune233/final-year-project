@@ -20,6 +20,9 @@ public class AnimationController : MonoBehaviour
 
     public int Step_index = 0;
     public int StepIndexMax = 7;
+    public bool Animation_State = false;
+
+    private float[] Animation_Time = { 0, 2, 8, 27, 30, 34, 37, 42};
 
     // Start is called before the first frame update 
     void Start()
@@ -27,6 +30,36 @@ public class AnimationController : MonoBehaviour
         animator = my3DModel.GetComponent<Animator>();
         MyPauseButton.gameObject.SetActive(true);
         MyResumeButton.gameObject.SetActive(false);
+    }
+
+    public void Next_Step_btn()
+    {
+        Step_index += 1;
+
+        if(Step_index > StepIndexMax)
+        {
+            Step_index = StepIndexMax;
+        }
+
+        
+        AnimatorClipInfo[] myAnimatorClip = animator.GetCurrentAnimatorClipInfo(0);
+        animator.Play("DH Notation lecture example", -1, (Animation_Time[Step_index]) / myAnimatorClip[0].clip.length);
+        animator.speed = 1;
+    }
+
+    public void Prevous_Step_btn()
+    {
+        Step_index -= 1;
+
+        if (Step_index < 0)
+        {
+            Step_index = 0;
+        }
+
+        
+        AnimatorClipInfo[] myAnimatorClip = animator.GetCurrentAnimatorClipInfo(0);
+        animator.Play("DH Notation lecture example", -1, (Animation_Time[Step_index]) / myAnimatorClip[0].clip.length);
+        animator.speed = 1;
     }
 
     public void Animation_Speed_Adjust(float change)
@@ -44,7 +77,10 @@ public class AnimationController : MonoBehaviour
 
     public void playAnime()
     {
-        animator.Play("DH Notation lecture example", -1, 0f);
+        AnimatorClipInfo[] myAnimatorClip = animator.GetCurrentAnimatorClipInfo(0);
+
+        animator.Play("DH Notation lecture example", -1, (Animation_Time[Step_index]) / myAnimatorClip[0].clip.length);
+        Animation_State = true;
     }
 
     public void pauseAnim()
@@ -104,15 +140,17 @@ public class AnimationController : MonoBehaviour
         //    //Steps[7].SetActive(false);
         //}
 
-        if (myTime > 0 && myTime < 2.0)
+        if (myTime > 1.8 && myTime < 1.9)
         {
-            Step_index = 7;
+            animator.speed = 0;
+            //Step_index = 7;
             //Steps[7].SetActive(true);
         }
 
-        if (myTime > 2.0 && myTime < 10.0)
+        if (myTime > 7.8 && myTime < 7.9)
         {
-            Step_index = 0;
+            animator.speed = 0;
+            //Step_index = 0;
             //Steps[7].SetActive(false);
             //Steps[0].SetActive(true);
 
@@ -126,9 +164,10 @@ public class AnimationController : MonoBehaviour
             //else { }
         }
 
-        if (myTime > 10.0 && myTime < 30.0)
+        if (myTime > 26.8 && myTime < 26.9)
         {
-            Step_index = 1;
+            animator.speed = 0;
+            //Step_index = 1;
             //Steps[0].SetActive(false);
             //Steps[1].SetActive(true);
 
@@ -138,49 +177,55 @@ public class AnimationController : MonoBehaviour
             //}
         }
 
-        if (myTime > 28.0 && myTime < 30.0)
+        if (myTime > 29.8 && myTime < 29.9)
         {
-            Step_index = 2;
+            animator.speed = 0;
+            //Step_index = 2;
             //Steps[1].SetActive(false);
             //Steps[2].SetActive(true);
             //if (myTime == 28.5) { pauseAnim(); }
         }
 
-        if (myTime > 30.0 && myTime < 34.0)
+        if (myTime > 33.8 && myTime < 33.9)
         {
-            Step_index = 3;
+            animator.speed = 0;
+            //Step_index = 3;
             //Steps[2].SetActive(false);
             //Steps[3].SetActive(true);
             //if (myTime == 30.5) { pauseAnim(); }
         }
 
-        if (myTime > 34.0 && myTime < 37.0)
+        if (myTime > 36.8 && myTime < 36.9)
         {
-            Step_index = 4;
+            animator.speed = 0;
+            //Step_index = 4;
             //Steps[3].SetActive(false);
             //Steps[4].SetActive(true);
             //if (myTime == 34.5) { pauseAnim(); }
         }
 
-        if (myTime > 37.0 && myTime < 42.0)
+        if (myTime > 41.8 && myTime < 41.9)
         {
-            Step_index = 5;
+            animator.speed = 0;
+            //Step_index = 5;
             //Steps[4].SetActive(false);
             //Steps[5].SetActive(true);
             //if (myTime == 37.5) { pauseAnim(); }
         }
 
-        if (myTime > 42.0 && myTime < 48.0)
+        if (myTime > 47.8 && myTime < 47.9)
         {
-            Step_index = 6;
+            //animator.speed = 0;
+            //Step_index = 6;
             //Steps[5].SetActive(false);
             //Steps[6].SetActive(true);
             //if (myTime == 42.5) { pauseAnim(); }
         }
 
-        if (myTime > 48.0 && myTime < 51.0)
+        if (myTime > 50.8 && myTime < 50.9)
         {
-            Step_index = 6;
+            //animator.speed = 0;
+            //Step_index = 6;
             //Steps[5].SetActive(false);
             //Steps[6].SetActive(true);
             //if (myTime == 48.5) { pauseAnim(); }
@@ -188,12 +233,16 @@ public class AnimationController : MonoBehaviour
 
         for (int i = 0; i <= StepIndexMax; i++)
         {
-            if (i == Step_index)
+            if (Animation_State)
             {
-                Steps[i].SetActive(true);
-            }else
-            {
-                Steps[i].SetActive(false);
+                if (i == Step_index)
+                {
+                    Steps[i].SetActive(true);
+                }
+                else
+                {
+                    Steps[i].SetActive(false);
+                }
             }
         }
 
