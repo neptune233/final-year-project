@@ -40,7 +40,7 @@ public class Submit : MonoBehaviour
     public static Matrix4x4 Userstep4;
     public GameObject Num_of_Step;
     public GameObject SubmitButton_S;
-
+    public CanvasGroup submitbutton;
     public InputField[] M1;
     public InputField[] M2;
     public InputField[] M3;
@@ -50,7 +50,8 @@ public class Submit : MonoBehaviour
     public GameObject Matrix3;
     public GameObject Matrix4;
     public GameObject Instruction9;
-
+    public GameObject SF;
+    public GameObject Instruction10;
 
     // input the number of matrix
     public void Number_of_Matrix()
@@ -425,17 +426,21 @@ public class Submit : MonoBehaviour
             }
         }
     }
+
+    // Function which read the input matrix from users
     public void InputMatrix_16()
     {
         //data for matrix1
-        bool error1 = true;
         float temp;
+        bool error1 = true; // The bool which represents if the input is right or wrong
+       
         for (int i = 0; i < 16; i++)
         {
             if (float.TryParse(M1[i].text, out temp) == false)
             {
                 error1 = false;
                 break;
+                // If any input is not value type, the app will not accept the input
             }
         }
         if (error1 == true)
@@ -473,8 +478,6 @@ public class Submit : MonoBehaviour
             Ans1.m31 = 0;
             Ans1.m32 = 0;
             Ans1.m33 = 1;
-
-            
         }
 
         //data for matrix2
@@ -614,6 +617,9 @@ public class Submit : MonoBehaviour
             Matrix3.SetActive(false);
             Matrix4.SetActive(false);
             Instruction9.SetActive(false);
+            submitbutton.alpha=0;
+            SF.SetActive(false);
+            Instruction10.SetActive(true);
         }
 
     }

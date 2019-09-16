@@ -61,7 +61,10 @@ public class Buttonid : MonoBehaviour
         {
             id = 4;
         }
-
+        if(EventSystem.current.currentSelectedGameObject.name == "End Simulation")
+        {
+            id = 5;
+        }
 
 
     }

@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Instruction : MonoBehaviour {
     
-
     // public gameobject for feedback1
     public GameObject ButtonWrong1;
     public GameObject Instruction4;
@@ -42,14 +41,18 @@ public class Instruction : MonoBehaviour {
     public GameObject Wrong_3;
     public GameObject Submitbutton;
 
+    // public text and gameobject to check the input in num of matrices
+    public GameObject ButtonWrong4;
+    public GameObject NumofMatrix;
+
     // Check the input for matrix2 and matrix3
     //public Text matrix1;
     public InputField[] M1;
     public InputField[] M2;
     public InputField[] M3;
     public GameObject[] WrongBlock;
-    //public Text matrix2;
-    //public Text matrix3;
+   
+
     public GameObject Right1;
     public GameObject Right2;
     public GameObject Wrong1;
@@ -72,6 +75,7 @@ public class Instruction : MonoBehaviour {
 
     public GameObject InputCorrect;
     public GameObject InputWrong;
+    public GameObject Matrix1;
     public GameObject Matrix2;
     public GameObject Matrix3;
     public GameObject Submatrix;
@@ -82,6 +86,7 @@ public class Instruction : MonoBehaviour {
   
    
     // Function for Move Method
+    
     public void Button_1()
     {
         Scene scene = SceneManager.GetActiveScene();
@@ -117,7 +122,9 @@ public class Instruction : MonoBehaviour {
             }
         }
     }
+    
 
+    // When user press the wrong button in move method, give user a feedback 
     public void Button_2()
     {
         Scene scene = SceneManager.GetActiveScene();
@@ -149,10 +156,8 @@ public class Instruction : MonoBehaviour {
             if (Buttonid.id == 4)
             {
                 Eulerangle.SetActive(false);
-                Add.SetActive(true);
                 Instruction5.SetActive(false);
                 ButtonWrong2.SetActive(false);
-                Instruction6.SetActive(true);
                 Instruction7.SetActive(true);
             }
         }
@@ -166,9 +171,9 @@ public class Instruction : MonoBehaviour {
         if (scene.name.Equals("1")) { 
             if (Submit.NumofStep!=4)
             {
-            ButtonWrong3.SetActive(true);
+                ButtonWrong3.SetActive(true);
             }
-            if (Submit.NumofStep == 4)
+            else if (Submit.NumofStep == 4)
             {
                 ButtonWrong3.SetActive(false);
                 Instruction7.SetActive(false);
@@ -178,6 +183,25 @@ public class Instruction : MonoBehaviour {
                 Step4.SetActive(true);
                 NumofStep.SetActive(false);
                 Instruction8.SetActive(true);
+            }
+        }
+
+        if (scene.name.Equals("2"))
+        {
+            if(Submit.NumofMatrix!=3)
+            {
+                ButtonWrong4.SetActive(true);
+            }
+            else if(Submit.NumofMatrix==3)
+            {
+                ButtonWrong4.SetActive(false);
+                Matrix1.SetActive(true);
+                Matrix2.SetActive(true);
+                Matrix3.SetActive(true);
+                NumofMatrix.SetActive(false);
+                Instruction7.SetActive(false);
+                Instruction8.SetActive(true);
+                
             }
         }
     }
@@ -246,6 +270,40 @@ public class Instruction : MonoBehaviour {
         M1[13].text = "0";
         M1[14].text = "0";
         M1[15].text = "1";
+
+        M2[0].text = "1";
+        M2[1].text = "0";
+        M2[2].text = "0";
+        M2[3].text = "0";
+        M2[4].text = "0";
+        M2[5].text = "1";
+        M2[6].text = "0";
+        M2[7].text = "0";
+        M2[8].text = "0";
+        M2[9].text = "0";
+        M2[10].text = "1";
+        M2[11].text = "0";
+        M2[12].text = "0";
+        M2[13].text = "0";
+        M2[14].text = "0";
+        M2[15].text = "1";
+
+        M3[0].text = "1";
+        M3[1].text = "0";
+        M3[2].text = "0";
+        M3[3].text = "0";
+        M3[4].text = "0";
+        M3[5].text = "1";
+        M3[6].text = "0";
+        M3[7].text = "0";
+        M3[8].text = "0";
+        M3[9].text = "0";
+        M3[10].text = "1";
+        M3[11].text = "0";
+        M3[12].text = "0";
+        M3[13].text = "0";
+        M3[14].text = "0";
+        M3[15].text = "1";
     }
 
     /*

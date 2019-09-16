@@ -11,6 +11,7 @@ public class Inputfield : MonoBehaviour
     public GameObject point;
     public GameObject textmesh;
     public Transform origin;
+    public GameObject Mini;
 
 
     //function for caculating the relativeposition between two objects
@@ -29,6 +30,10 @@ public class Inputfield : MonoBehaviour
         Buttonid.Step = 0;
     }
 
+    private void Update()
+    {
+       
+    }
 
 
 

@@ -5,13 +5,17 @@ using UnityEngine.UI;
 
 public class MoveObject_Matrix : MonoBehaviour {
 
+    //Transform of AR camera
     public Transform Cam;
+
+    //Game Obejct for user input coordinate
     public GameObject UserxRef;
     public GameObject UseryRef;
     public GameObject UserzRef;
-    public GameObject Ans;
     public GameObject User;
-  
+
+    //GameObject for correct answer coordinate
+    public GameObject Ans;
     public GameObject AnsxRef;
     public GameObject AnsyRef;
     public GameObject AnszRef;
@@ -20,6 +24,7 @@ public class MoveObject_Matrix : MonoBehaviour {
     public GameObject Step2;
     public GameObject Step3;
 
+    //Quaternion and Vector3 which describe the four transformation(User Input)
     Quaternion q1;
     Vector3 v1;
     Quaternion q2;
@@ -29,30 +34,40 @@ public class MoveObject_Matrix : MonoBehaviour {
     Quaternion q4;
     Vector3 v4;
 
+    //Quaternion and Vector3 which describe the four transformation(Correct Ans)
     Quaternion q1_ans;
     Quaternion q2_ans;
     Quaternion q3_ans;
     Quaternion q4_ans;
 
     const float r = 40;
+
+    //Inital position of the coordinate system
     public static Vector3  Newposition1= new Vector3(0, 0.2f, -0.3f);
     public static Vector3 Newposition2= new Vector3(0, 0.2f, -0.3f);
     public static Vector3 Newposition3= new Vector3(0, 0.2f, -0.3f);
     public static Vector3 Newposition4= new Vector3(0, 0.2f, -0.3f);
+
+    //Create a convasgroup so we can change its transparency 
     public CanvasGroup submitbutton;
-    
+
+    //Transform of imagetarget
     public Transform imagetarget;
+
+    //Create three bool to justify whether the reference is generated or not
     public static bool Iscreated1 = true;
     public static bool Iscreated2 = true;
     public static bool Iscreated3 = true;
 
-
+    //Two timer to count the time
     public static float Timer1 = 0;
     public static float Timer2 = 0;
 
+    //Correct and Wrong feedback for users' input
     public GameObject Correct;
     public GameObject Wrong;
 
+    //Function which reads the users' input when the button is pressed
     public void Onclick()
     {
         
@@ -63,8 +78,6 @@ public class MoveObject_Matrix : MonoBehaviour {
             q1_ans = Transformation_Matrix.GetRotation(Submit.Ans1);
 
             Newposition1 = Newposition1 + v1;
-          
-            
         }
         if (Submit.NumofMatrix == 2)
         {
@@ -78,8 +91,6 @@ public class MoveObject_Matrix : MonoBehaviour {
 
             Newposition1 = Newposition1 + v1;
             Newposition2 = Newposition2 + v2;
-            
-
         }
         if (Submit.NumofMatrix == 3)
         {
@@ -95,13 +106,9 @@ public class MoveObject_Matrix : MonoBehaviour {
             v3 = Transformation_Matrix.GetPostion(Submit.Usermat1 * Submit.Usermat2 * Submit.Usermat3) / r;
             q3_ans = Transformation_Matrix.GetRotation(Submit.Ans1 * Submit.Ans2 * Submit.Ans3);
 
-
             Newposition1 = Newposition1 + v1;
             Newposition2 = Newposition2 + v2;
             Newposition3 = Newposition3 + v3;
-
-
-
         }
         if (Submit.NumofMatrix == 4)
         {
@@ -126,15 +133,14 @@ public class MoveObject_Matrix : MonoBehaviour {
             Newposition3 = Newposition3 + v3;
             Newposition4 = Newposition4 + v4;
         }
-
     }
 
 
-     void FixedUpdate()
+    void FixedUpdate()
     {
         
       
-        if (Timer1>8)
+        if(Timer1>8)
         {
             Step2.SetActive(true);
         }
@@ -142,33 +148,169 @@ public class MoveObject_Matrix : MonoBehaviour {
         {
             Step3.SetActive(true);
         }
-        
 
+        // Case when only one matrix is input
         if (Submit.NumofMatrix == 1)
+        {
             if (Buttonid.Step == 1)
             {
+                Timer1 = Timer1 + Time.deltaTime;
+                if (Iscreated1)
                 {
-                    
-                    User.transform.localPosition = Vector3.Lerp(User.transform.localPosition, Newposition1, Time.deltaTime / 3);
-                    User.transform.localRotation = Quaternion.Slerp(User.transform.localRotation, q1, Time.deltaTime / 3);
+                    Iscreated1 = false;
+                    var clone1 = Instantiate(User, imagetarget);
+                    clone1.name = "ref1";
+
+                    var clone2 = Instantiate(Ans, imagetarget);
+                    clone2.name = "ansref1";
                 }
+
+                Quaternion lastRotation = Cam.rotation;
+
+                UserxRef.transform.rotation = lastRotation;
+                UseryRef.transform.rotation = lastRotation;
+                UserzRef.transform.rotation = lastRotation;
+                AnsxRef.transform.rotation = lastRotation;
+                AnsyRef.transform.rotation = lastRotation;
+                AnszRef.transform.rotation = lastRotation;
+
+
+                if (GameObject.Find("ImageTarget/ref1") == true)
+                {
+                    UserxRef.transform.position = GameObject.Find("ImageTarget/ref1/x-axis/Userxcoor").gameObject.transform.position;
+                    UseryRef.transform.position = GameObject.Find("ImageTarget/ref1/y-axis/Userycoor").gameObject.transform.position;
+                    UserzRef.transform.position = GameObject.Find("ImageTarget/ref1/z-axis/Userzcoor").gameObject.transform.position;
+                    GameObject.Find("ImageTarget/ref1/x-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(255, 0, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ref1/y-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 255, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ref1/z-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 255, 0.3f);
+
+                }
+
+                if (GameObject.Find("ImageTarget/ansref1") == true)
+                {
+                    AnsxRef.transform.position = GameObject.Find("ImageTarget/ansref1/x-axis/Ansxcoor").gameObject.transform.position;
+                    AnsyRef.transform.position = GameObject.Find("ImageTarget/ansref1/y-axis/Ansycoor").gameObject.transform.position;
+                    AnszRef.transform.position = GameObject.Find("ImageTarget/ansref1/z-axis/Anszcoor").gameObject.transform.position;
+                    GameObject.Find("ImageTarget/ansref1/x-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(255, 0, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ansref1/y-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 255, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ansref1/z-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 255, 0.3f);
+
+                }
+
+
+                User.transform.localPosition = Vector3.Lerp(User.transform.localPosition, Newposition1, Time.deltaTime / 3);
+                User.transform.localRotation = Quaternion.Slerp(User.transform.localRotation, q1, Time.deltaTime / 3);
+
             }
+        }
 
 
         if (Submit.NumofMatrix == 2)
         {
                 if (Buttonid.Step==1)
                 {
-                    User.transform.localPosition = Vector3.Lerp(User.transform.localPosition, Newposition1, Time.deltaTime / 3);
+                Timer1 = Timer1 + Time.deltaTime;
+                if (Iscreated1)
+                {
+                    Iscreated1 = false;
+                    var clone1 = Instantiate(User, imagetarget);
+
+                    clone1.name = "ref1";
+
+
+                    var clone2 = Instantiate(Ans, imagetarget);
+                    clone2.name = "ansref1";
+
+                }
+
+                Quaternion lastRotation = Cam.rotation;
+
+                UserxRef.transform.rotation = lastRotation;
+                UseryRef.transform.rotation = lastRotation;
+                UserzRef.transform.rotation = lastRotation;
+                AnsxRef.transform.rotation = lastRotation;
+                AnsyRef.transform.rotation = lastRotation;
+                AnszRef.transform.rotation = lastRotation;
+
+
+                if (GameObject.Find("ImageTarget/ref1") == true)
+                {
+                    UserxRef.transform.position = GameObject.Find("ImageTarget/ref1/x-axis/Userxcoor").gameObject.transform.position;
+                    UseryRef.transform.position = GameObject.Find("ImageTarget/ref1/y-axis/Userycoor").gameObject.transform.position;
+                    UserzRef.transform.position = GameObject.Find("ImageTarget/ref1/z-axis/Userzcoor").gameObject.transform.position;
+                    GameObject.Find("ImageTarget/ref1/x-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(255, 0, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ref1/y-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 255, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ref1/z-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 255, 0.3f);
+
+                }
+
+                if (GameObject.Find("ImageTarget/ansref1") == true)
+                {
+                    AnsxRef.transform.position = GameObject.Find("ImageTarget/ansref1/x-axis/Ansxcoor").gameObject.transform.position;
+                    AnsyRef.transform.position = GameObject.Find("ImageTarget/ansref1/y-axis/Ansycoor").gameObject.transform.position;
+                    AnszRef.transform.position = GameObject.Find("ImageTarget/ansref1/z-axis/Anszcoor").gameObject.transform.position;
+                    GameObject.Find("ImageTarget/ansref1/x-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(255, 0, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ansref1/y-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 255, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ansref1/z-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 255, 0.3f);
+
+                }
+                User.transform.localPosition = Vector3.Lerp(User.transform.localPosition, Newposition1, Time.deltaTime / 3);
                     User.transform.localRotation = Quaternion.Slerp(User.transform.localRotation, q1, Time.deltaTime / 3);
                 }
 
                 if(Buttonid.Step==2)
                 {
-                     User.transform.localPosition = Vector3.Lerp(User.transform.localPosition, Newposition2, Time.deltaTime / 3);
+                Timer2 = Timer2 + Time.deltaTime;
+                if (Iscreated2)
+                {
+                    if (GameObject.Find("ref1"))
+                    {
+                        Destroy(GameObject.Find("ref1").gameObject);
+                    }
+                    if (GameObject.Find("ansref1"))
+                    {
+                        Destroy(GameObject.Find("ansref1").gameObject);
+                    }
+                    var clone1 = Instantiate(User, imagetarget);
+                    clone1.name = "ref2";
+                    Iscreated2 = false;
+
+                    var clone2 = Instantiate(Ans, imagetarget);
+                    clone2.name = "ansref2";
+                }
+
+                Quaternion lastRotation = Cam.rotation;
+
+                UserxRef.transform.rotation = lastRotation;
+                UseryRef.transform.rotation = lastRotation;
+                UserzRef.transform.rotation = lastRotation;
+                AnsxRef.transform.rotation = lastRotation;
+                AnsyRef.transform.rotation = lastRotation;
+                AnszRef.transform.rotation = lastRotation;
+
+                if (GameObject.Find("ImageTarget/ref2") == true)
+                {
+                    UserxRef.transform.position = GameObject.Find("ImageTarget/ref2/x-axis/Userxcoor").gameObject.transform.position;
+                    UseryRef.transform.position = GameObject.Find("ImageTarget/ref2/y-axis/Userycoor").gameObject.transform.position;
+                    UserzRef.transform.position = GameObject.Find("ImageTarget/ref2/z-axis/Userzcoor").gameObject.transform.position;
+                    GameObject.Find("ImageTarget/ref2/x-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(255, 0, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ref2/y-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 255, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ref2/z-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 255, 0.3f);
+                }
+
+                if (GameObject.Find("ImageTarget/ansref2") == true)
+                {
+                    AnsxRef.transform.position = GameObject.Find("ImageTarget/ansref2/x-axis/Ansxcoor").gameObject.transform.position;
+                    AnsyRef.transform.position = GameObject.Find("ImageTarget/ansref2/y-axis/Ansycoor").gameObject.transform.position;
+                    AnszRef.transform.position = GameObject.Find("ImageTarget/ansref2/z-axis/Anszcoor").gameObject.transform.position;
+                    GameObject.Find("ImageTarget/ansref2/x-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(255, 0, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ansref2/y-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 255, 0, 0.3f);
+                    GameObject.Find("ImageTarget/ansref2/z-axis/Cylinder").gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 255, 0.3f);
+                }
+                User.transform.localPosition = Vector3.Lerp(User.transform.localPosition, Newposition2, Time.deltaTime / 3);
                      User.transform.localRotation = Quaternion.Slerp(User.transform.localRotation, q2, Time.deltaTime / 3);
                 }
-          }
+        }
 
         if (Submit.NumofMatrix == 3)
         {
@@ -188,6 +330,7 @@ public class MoveObject_Matrix : MonoBehaviour {
                         clone2.name = "ansref1";
                     
                     }
+
                Quaternion lastRotation = Cam.rotation;
                 
                 UserxRef.transform.rotation = lastRotation;
@@ -196,7 +339,7 @@ public class MoveObject_Matrix : MonoBehaviour {
                 AnsxRef.transform.rotation = lastRotation;
                 AnsyRef.transform.rotation = lastRotation;
                 AnszRef.transform.rotation = lastRotation;
-
+                
 
                 if (GameObject.Find("ImageTarget/ref1") == true)
                 {
@@ -248,6 +391,7 @@ public class MoveObject_Matrix : MonoBehaviour {
                         var clone2 = Instantiate(Ans, imagetarget);
                         clone2.name = "ansref2";
                     }
+                
                 Quaternion lastRotation = Cam.rotation;
 
                 UserxRef.transform.rotation = lastRotation;
@@ -256,7 +400,7 @@ public class MoveObject_Matrix : MonoBehaviour {
                 AnsxRef.transform.rotation = lastRotation;
                 AnsyRef.transform.rotation = lastRotation;
                 AnszRef.transform.rotation = lastRotation;
-
+                
                 if (GameObject.Find("ImageTarget/ref2") == true)
                 {
                     UserxRef.transform.position = GameObject.Find("ImageTarget/ref2/x-axis/Userxcoor").gameObject.transform.position;
@@ -305,6 +449,7 @@ public class MoveObject_Matrix : MonoBehaviour {
                         clone2.name = "ansref3";
 
                 }
+                
                 Quaternion lastRotation = Cam.rotation;
 
                 UserxRef.transform.rotation = lastRotation;
@@ -313,7 +458,7 @@ public class MoveObject_Matrix : MonoBehaviour {
                 AnsxRef.transform.rotation = lastRotation;
                 AnsyRef.transform.rotation = lastRotation;
                 AnszRef.transform.rotation = lastRotation;
-
+                
                 if (GameObject.Find("ImageTarget/ref3") == true)
                 {
                     UserxRef.transform.position = GameObject.Find("ImageTarget/ref3/x-axis/Userxcoor").gameObject.transform.position;
@@ -372,7 +517,14 @@ public class MoveObject_Matrix : MonoBehaviour {
             }
         }
 
-
+        if (Buttonid.id == 5)
+        {
+            Vector3 Orgin = new Vector3(0, 0, 0);
+            User.transform.localPosition= Vector3.Lerp(User.transform.localPosition,Orgin , Time.deltaTime / 3);
+            Ans.transform.localPosition = Vector3.Lerp(Ans.transform.localPosition, Orgin, Time.deltaTime / 3);
+            MoveObject_Matrix.Timer1 = 0;
+            MoveObject_Matrix.Timer2 = 0;
+        }
 
 
     }
