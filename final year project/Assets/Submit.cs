@@ -52,6 +52,7 @@ public class Submit : MonoBehaviour
     public GameObject Instruction9;
     public GameObject SF;
     public GameObject Instruction10;
+    public GameObject Instruction14;
 
     // input the number of matrix
     public void Number_of_Matrix()
@@ -620,6 +621,7 @@ public class Submit : MonoBehaviour
             submitbutton.alpha=0;
             SF.SetActive(false);
             Instruction10.SetActive(true);
+            Instruction14.SetActive(true);
         }
 
     }

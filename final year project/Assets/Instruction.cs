@@ -168,25 +168,9 @@ public class Instruction : MonoBehaviour {
     {
         Scene scene = SceneManager.GetActiveScene();
 
-        if (scene.name.Equals("1")) { 
-            if (Submit.NumofStep!=4)
-            {
-                ButtonWrong3.SetActive(true);
-            }
-            else if (Submit.NumofStep == 4)
-            {
-                ButtonWrong3.SetActive(false);
-                Instruction7.SetActive(false);
-                Step1.SetActive(true);
-                Step2.SetActive(true);
-                Step3.SetActive(true);
-                Step4.SetActive(true);
-                NumofStep.SetActive(false);
-                Instruction8.SetActive(true);
-            }
-        }
-
-        if (scene.name.Equals("2"))
+        
+    
+        if (scene.name.Equals("Transformationmatrix"))
         {
             if(Submit.NumofMatrix!=3)
             {
@@ -306,148 +290,7 @@ public class Instruction : MonoBehaviour {
         M3[15].text = "1";
     }
 
-    /*
-    public void Checkmatrix()
-    {
-        bool state1=false;
-        bool state2=false;
-        bool error2 = true;
-        float temp;
-        string Data2 = matrix2.text;
-        string[] numberlist2 = Data2.Split();
-        if (numberlist2.Length == 16)
-        {
-            for (int i = 0; i < numberlist2.Length; i++)
-            {
-                if (float.TryParse(numberlist2[i], out temp) == false)
-                {
-                    error2 = false;
-                    break;
-                }
-            }
-            if (error2 == true)
-            {
-                if (Mathf.Abs(float.Parse(numberlist2[0]) - 1f) < 0.01f && Mathf.Abs(float.Parse(numberlist2[1])) < 0.01f && Mathf.Abs(float.Parse(numberlist2[2])) < 0.01f && Mathf.Abs(float.Parse(numberlist2[3])) < 0.01f && Mathf.Abs(float.Parse(numberlist2[4])) < 0.01f && Mathf.Abs(float.Parse(numberlist2[5]) - 0.707f) < 0.01f && Mathf.Abs(float.Parse(numberlist2[6]) + 0.707f) < 0.01f && Mathf.Abs(float.Parse(numberlist2[7])) < 0.01f && Mathf.Abs(float.Parse(numberlist2[8])) < 0.01f && Mathf.Abs(float.Parse(numberlist2[9])) - 0.707f < 0.01f && Mathf.Abs(float.Parse(numberlist2[10])) - 0.707f < 0.01f && Mathf.Abs(float.Parse(numberlist2[11])) < 0.01f && Mathf.Abs(float.Parse(numberlist2[12])) < 0.01f && Mathf.Abs(float.Parse(numberlist2[13])) < 0.01f && Mathf.Abs(float.Parse(numberlist2[14])) < 0.01 && Mathf.Abs(float.Parse(numberlist2[15]) - 1f) < 0.01f)
-                {
-                    Right1.SetActive(true);
-                    Wrong1.SetActive(false);
-                    state1 = true;
-                }
-                else
-                {
-                    Wrong1.SetActive(true);
-                    Right1.SetActive(false);
-                   
-                }
-            }
-        }
-        bool error3 = true;
-        string Data3 = matrix3.text;
-        string[] numberlist3 = Data3.Split();
-        if (numberlist3.Length == 16)
-        {
-            for (int i = 0; i < numberlist3.Length; i++)
-            {
-                if (float.TryParse(numberlist3[i], out temp) == false)
-                {
-                    error3 = false;
-                    break;
-                }
-            }
-
-            if (error3 == true)
-            {
-                if (Mathf.Abs(float.Parse(numberlist3[0]) - 0.5f) < 0.01f && Mathf.Abs(float.Parse(numberlist3[1]) + 0.866f) < 0.01f && Mathf.Abs(float.Parse(numberlist3[2])) < 0.01f && Mathf.Abs(float.Parse(numberlist3[3])) < 0.01f && Mathf.Abs(float.Parse(numberlist3[4]) - 0.866f) < 0.01f && Mathf.Abs(float.Parse(numberlist3[5]) - 0.5f) < 0.01f && Mathf.Abs(float.Parse(numberlist3[6])) < 0.01f && Mathf.Abs(float.Parse(numberlist3[7])) < 0.01f && Mathf.Abs(float.Parse(numberlist3[8])) < 0.01f && Mathf.Abs(float.Parse(numberlist3[9])) < 0.01f && Mathf.Abs(float.Parse(numberlist3[10])) - 1f < 0.01f && Mathf.Abs(float.Parse(numberlist3[11])) < 0.01f && Mathf.Abs(float.Parse(numberlist3[12])) < 0.01f && Mathf.Abs(float.Parse(numberlist3[13])) < 0.01f && Mathf.Abs(float.Parse(numberlist3[14])) < 0.01 && Mathf.Abs(float.Parse(numberlist3[15]) - 1f) < 0.01f)
-                {
-                    Right2.SetActive(true);
-                    Wrong2.SetActive(false);
-                    state2 = true;
-                }
-                else
-                {
-                    Wrong2.SetActive(true);
-                    Right2.SetActive(false);
-                   
-                }
-            }
-        }
-        
-        if( state1==true && state2 == true)
-        {
-            Instruction9.SetActive(false);
-            Instruction10.SetActive(true);
-            Button.SetActive(true);
-        }
-    }
-    */
-
-    /*
-    public void Checkmatrix()
-    {
-        bool state1 = false;
-        bool state2 = false;
-        bool error2 = true;
-        float temp;
-
-        for (int i = 0; i < 16; i++)
-        {
-            if (float.TryParse(M2[i].text, out temp) == false)
-            {
-                error2 = false;
-                break;
-            }
-        }
-        if (error2 == true)
-            {
-                if (Mathf.Abs(float.Parse(M2[0].text) - 1f) < 0.01f && Mathf.Abs(float.Parse(M2[1].text)) < 0.01f && Mathf.Abs(float.Parse(M2[2].text)) < 0.01f && Mathf.Abs(float.Parse(M2[3].text)) < 0.01f && Mathf.Abs(float.Parse(M2[4].text)) < 0.01f && Mathf.Abs(float.Parse(M2[5].text) - 0.707f) < 0.01f && Mathf.Abs(float.Parse(M2[6].text) + 0.707f) < 0.01f && Mathf.Abs(float.Parse(M2[7].text)) < 0.01f && Mathf.Abs(float.Parse(M2[8].text)) < 0.01f && Mathf.Abs(float.Parse(M2[9].text) - 0.707f) < 0.01f && Mathf.Abs(float.Parse(M2[10].text) - 0.707f) < 0.01f && Mathf.Abs(float.Parse(M2[11].text)) < 0.01f && Mathf.Abs(float.Parse(M2[12].text)) < 0.01f && Mathf.Abs(float.Parse(M2[13].text)) < 0.01f && Mathf.Abs(float.Parse(M2[14].text)) < 0.01 && Mathf.Abs(float.Parse(M2[15].text) - 1f) < 0.01f)
-                {
-                    Right1.SetActive(true);
-                    Wrong1.SetActive(false);
-                    state1 = true;
-                }
-                else
-                {
-                    Wrong1.SetActive(true);
-                    Right1.SetActive(false);
-
-                }
-            }
-        
-        bool error3 = true;
-    
-         for (int i = 0; i< 16; i++)
-        {
-            if (float.TryParse(M3[i].text, out temp) == false)
-            {
-                error3 = false;
-                break;
-            }
-        }
-        if (error3 == true)
-            {
-                if (Mathf.Abs(float.Parse(M3[0].text) - 0.5f) < 0.01f && Mathf.Abs(float.Parse(M3[1].text)+0.866f) < 0.01f && Mathf.Abs(float.Parse(M3[2].text)) < 0.01f && Mathf.Abs(float.Parse(M3[3].text)) < 0.01f && Mathf.Abs(float.Parse(M3[4].text)-0.866f) < 0.01f && Mathf.Abs(float.Parse(M3[5].text) - 0.5f) < 0.01f && Mathf.Abs(float.Parse(M3[6].text)) < 0.01f && Mathf.Abs(float.Parse(M3[7].text)) < 0.01f && Mathf.Abs(float.Parse(M3[8].text)) < 0.01f && Mathf.Abs(float.Parse(M3[9].text))< 0.01f && Mathf.Abs(float.Parse(M3[10].text) - 1f) < 0.01f && Mathf.Abs(float.Parse(M3[11].text)) < 0.01f && Mathf.Abs(float.Parse(M3[12].text)) < 0.01f && Mathf.Abs(float.Parse(M3[13].text)) < 0.01f && Mathf.Abs(float.Parse(M3[14].text)) < 0.01 && Mathf.Abs(float.Parse(M3[15].text) - 1f) < 0.01f)
-                {
-                    Right2.SetActive(true);
-                    Wrong2.SetActive(false);
-                    state2 = true;
-                }
-                else
-                {
-                    Wrong2.SetActive(true);
-                    Right2.SetActive(false);
-
-                }
-            }
-        
-
-        if (state1 == true && state2 == true)
-        {
-            Instruction9.SetActive(false);
-            Instruction10.SetActive(true);
-            Button.SetActive(true);
-        }
-    }
-    */
+   
     public void Checkmatrix()
     {
 
@@ -977,6 +820,7 @@ public class Instruction : MonoBehaviour {
         MoveObject_Matrix.Iscreated3 = true;
         MoveObject_Matrix.Timer1 = 0;
         MoveObject_Matrix.Timer2 = 0;
+        MoveObject_Matrix.Timer3 = 0;
     }
     public void Show()
     {

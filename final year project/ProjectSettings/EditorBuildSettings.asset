@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Index.unity
     guid: fa0913115ac1d4fba8b9d10280f4b04d
   - enabled: 1
-    path: Assets/Scenes/1.unity
+    path: Assets/Scenes/Samplequestion.unity
     guid: b35dfe273c98a124bb8356f890f94373
   - enabled: 1
-    path: Assets/Scenes/2.unity
+    path: Assets/Scenes/Transformationmatrix.unity
     guid: e97e02bbfc0558f4fa76cf3237fe7245
   - enabled: 0
     path: Assets/Scenes/2_1.unity
@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/DH notation.unity
     guid: bc50922ba6737f148b731ed89259cef5
+  - enabled: 1
+    path: Assets/Scenes/Moreexercise.unity
+    guid: 01e6c76c64dadaf41819a108ca0ab430
   m_configObjects: {}

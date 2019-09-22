@@ -44,7 +44,7 @@ public class Keyboard : MonoBehaviour
             Debug.Log("nothing");
             Board.SetActive(false);
 
-            debug.text = "nothing";
+
         }
 
 
@@ -55,12 +55,12 @@ public class Keyboard : MonoBehaviour
             if (EventSystem.current.currentSelectedGameObject.tag.ToString() == "Input")
             {
                 Board.SetActive(true);
-                debug.text = "Input";
+                
             }
             else
             {
                 Board.SetActive(false);
-                debug.text = "not Input";
+               
             }
         }
 

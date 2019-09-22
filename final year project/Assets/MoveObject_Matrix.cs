@@ -62,10 +62,20 @@ public class MoveObject_Matrix : MonoBehaviour {
     //Two timer to count the time
     public static float Timer1 = 0;
     public static float Timer2 = 0;
+    public static float Timer3 = 0;
 
     //Correct and Wrong feedback for users' input
     public GameObject Correct;
     public GameObject Wrong;
+
+    //
+    public GameObject Clock;
+    public Text Number;
+    public GameObject Instruction14;
+    public GameObject Instruction15;
+    public GameObject Instruction16;
+    public GameObject End;
+
 
     //Function which reads the users' input when the button is pressed
     public void Onclick()
@@ -142,11 +152,20 @@ public class MoveObject_Matrix : MonoBehaviour {
       
         if(Timer1>8)
         {
+            Instruction14.SetActive(false);
+            Instruction15.SetActive(true);
             Step2.SetActive(true);
         }
         if(Timer2>8)
         {
+            Instruction15.SetActive(false);
+            Instruction16.SetActive(true);
             Step3.SetActive(true);
+        }
+        if(Timer3>8)
+        {
+            Instruction16.SetActive(false);
+            End.SetActive(true);   
         }
 
         // Case when only one matrix is input
@@ -318,7 +337,13 @@ public class MoveObject_Matrix : MonoBehaviour {
                 if (Buttonid.Step == 1)
                 {
                     Timer1 = Timer1 + Time.deltaTime;
-                    if (Iscreated1)
+                    if (Timer1 <= 8)
+                    {
+                        Number.text = (8 - Timer1).ToString("f1");
+                    }
+
+                Clock.GetComponent<Image>().fillAmount = 1 - Timer1 / 8;
+                if (Iscreated1)
                     {
                        Iscreated1 =false;
                         var clone1=Instantiate(User, imagetarget) ;
@@ -373,7 +398,12 @@ public class MoveObject_Matrix : MonoBehaviour {
 
                 if (Buttonid.Step == 2)
                 {
-                Timer2 = Timer2 + Time.deltaTime;
+                    Timer2 = Timer2 + Time.deltaTime;
+                    if (Timer2 <= 8)
+                    {
+                        Number.text = (8 - Timer2).ToString("f1");
+                    }
+                    Clock.GetComponent<Image>().fillAmount = 1 - Timer2 / 8;
                 if (Iscreated2)
                     {
                     if (GameObject.Find("ref1"))
@@ -430,23 +460,30 @@ public class MoveObject_Matrix : MonoBehaviour {
 
                 if (Buttonid.Step == 3)
                 {
-                
-                if (Iscreated3)
-                    {
-                        if (GameObject.Find("ref2"))
-                        {
-                            Destroy( GameObject.Find("ref2"));
-                        }
-                        if (GameObject.Find("ansref2"))
-                        {
-                           Destroy(GameObject.Find("ansref2"));
-                        }
-                        var clone1=Instantiate(User, imagetarget);
-                        clone1.name = "ref3";
-                        Iscreated3 = false;
 
-                        var clone2 = Instantiate(Ans, imagetarget);
-                        clone2.name = "ansref3";
+                    Timer3 = Timer3 + Time.deltaTime;
+                    if (Timer3 <= 8)
+                    {
+                        Number.text = (8 - Timer3).ToString("f1");
+                    }
+                    Clock.GetComponent<Image>().fillAmount = 1 - Timer3 / 8;
+
+                    if (Iscreated3)
+                        {
+                            if (GameObject.Find("ref2"))
+                            {
+                                Destroy( GameObject.Find("ref2"));
+                            }
+                            if (GameObject.Find("ansref2"))
+                            {
+                               Destroy(GameObject.Find("ansref2"));
+                            }
+                            var clone1=Instantiate(User, imagetarget);
+                            clone1.name = "ref3";
+                            Iscreated3 = false;
+
+                            var clone2 = Instantiate(Ans, imagetarget);
+                            clone2.name = "ansref3";
 
                 }
                 
@@ -480,7 +517,7 @@ public class MoveObject_Matrix : MonoBehaviour {
                     
                 }
 
-                User.transform.localPosition = Vector3.Lerp(User.transform.localPosition, Newposition3, Time.deltaTime / 3);
+                    User.transform.localPosition = Vector3.Lerp(User.transform.localPosition, Newposition3, Time.deltaTime / 3);
                     User.transform.localRotation = Quaternion.Slerp(User.transform.localRotation, q3, Time.deltaTime / 3);
                     
                     Ans.transform.localRotation = Quaternion.Slerp(Ans.transform.localRotation, q3_ans, Time.deltaTime / 3);
@@ -517,14 +554,7 @@ public class MoveObject_Matrix : MonoBehaviour {
             }
         }
 
-        if (Buttonid.id == 5)
-        {
-            Vector3 Orgin = new Vector3(0, 0, 0);
-            User.transform.localPosition= Vector3.Lerp(User.transform.localPosition,Orgin , Time.deltaTime / 3);
-            Ans.transform.localPosition = Vector3.Lerp(Ans.transform.localPosition, Orgin, Time.deltaTime / 3);
-            MoveObject_Matrix.Timer1 = 0;
-            MoveObject_Matrix.Timer2 = 0;
-        }
+        
 
 
     }

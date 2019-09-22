@@ -6,18 +6,23 @@ using UnityEngine.SceneManagement;
 public class Index : MonoBehaviour
 {
     
-    public void Scene_1()
+    public void Samplequestion()
     {
-        SceneManager.LoadScene("1");
+        SceneManager.LoadScene("Samplequestion");
     }
 
-    public void Scene_2()
+    public void Moreexercise()
     {
-        SceneManager.LoadScene("2");
+        SceneManager.LoadScene("Moreexercise");
     }
 
-    public void Scene_3()
+    public void Mainmenu()
     {
-       SceneManager.LoadScene("3");
+       SceneManager.LoadScene("Index");
+    }
+
+    public void Transformationmatrix()
+    {
+        SceneManager.LoadScene("Transformationmatrix");
     }
 }
