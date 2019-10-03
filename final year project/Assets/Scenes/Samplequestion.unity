@@ -1233,7 +1233,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142299934}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.3, z: 0}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children:
@@ -1242,7 +1242,7 @@ Transform:
   - {fileID: 516075475}
   m_Father: {fileID: 1883364703}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &142299936
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1812,19 +1812,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b264d578ee20724ab5cc1c91a5bb525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChoiceA: {fileID: 0}
-  ChoiceB: {fileID: 0}
-  ChoiceC: {fileID: 0}
-  ChoiceD: {fileID: 0}
-  LeftArrow: {fileID: 0}
-  RightArrow: {fileID: 0}
-  Q0_A: {fileID: 1584461792}
-  Q0_B: {fileID: 1389678485}
-  Q0_C: {fileID: 1513812}
-  Q0_D: {fileID: 1748454028}
-  Ans0: {fileID: 0}
-  Q0: {fileID: 0}
+  Newquestion: {fileID: 0}
   Q1: {fileID: 0}
+  Animate1: {fileID: 0}
+  Animate2: {fileID: 0}
+  Animate3: {fileID: 0}
   M1:
     e00: 0
     e01: 0
@@ -1876,9 +1868,16 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 0
-  Input: []
-  Correct: {fileID: 0}
-  Wrong: {fileID: 0}
+  User: {fileID: 0}
+  imagetarget: {fileID: 0}
+  Cam: {fileID: 0}
+  UserxRef: {fileID: 0}
+  UseryRef: {fileID: 0}
+  UserzRef: {fileID: 0}
+  Step2: {fileID: 0}
+  Step3: {fileID: 0}
+  Clock: {fileID: 0}
+  Number: {fileID: 0}
 --- !u!1 &170049206
 GameObject:
   m_ObjectHideFlags: 0
@@ -5979,6 +5978,7 @@ MonoBehaviour:
   AnsxRef: {fileID: 0}
   AnsyRef: {fileID: 0}
   AnszRef: {fileID: 0}
+  User: {fileID: 0}
 --- !u!1001 &687513630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8448,19 +8448,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b264d578ee20724ab5cc1c91a5bb525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChoiceA: {fileID: 0}
-  ChoiceB: {fileID: 0}
-  ChoiceC: {fileID: 0}
-  ChoiceD: {fileID: 0}
-  LeftArrow: {fileID: 0}
-  RightArrow: {fileID: 0}
-  Q0_A: {fileID: 1584461792}
-  Q0_B: {fileID: 1389678485}
-  Q0_C: {fileID: 1513812}
-  Q0_D: {fileID: 1748454028}
-  Ans0: {fileID: 0}
-  Q0: {fileID: 0}
+  Newquestion: {fileID: 0}
   Q1: {fileID: 0}
+  Animate1: {fileID: 0}
+  Animate2: {fileID: 0}
+  Animate3: {fileID: 0}
   M1:
     e00: 0
     e01: 0
@@ -8512,9 +8504,16 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 0
-  Input: []
-  Correct: {fileID: 0}
-  Wrong: {fileID: 0}
+  User: {fileID: 0}
+  imagetarget: {fileID: 0}
+  Cam: {fileID: 0}
+  UserxRef: {fileID: 0}
+  UseryRef: {fileID: 0}
+  UserzRef: {fileID: 0}
+  Step2: {fileID: 0}
+  Step3: {fileID: 0}
+  Clock: {fileID: 0}
+  Number: {fileID: 0}
 --- !u!1 &942942263
 GameObject:
   m_ObjectHideFlags: 0
@@ -8657,19 +8656,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b264d578ee20724ab5cc1c91a5bb525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChoiceA: {fileID: 1794167892}
-  ChoiceB: {fileID: 568962599}
-  ChoiceC: {fileID: 1371488997}
-  ChoiceD: {fileID: 153285641}
-  LeftArrow: {fileID: 0}
-  RightArrow: {fileID: 0}
-  Q0_A: {fileID: 0}
-  Q0_B: {fileID: 0}
-  Q0_C: {fileID: 0}
-  Q0_D: {fileID: 0}
-  Ans0: {fileID: 0}
-  Q0: {fileID: 0}
+  Newquestion: {fileID: 0}
   Q1: {fileID: 0}
+  Animate1: {fileID: 0}
+  Animate2: {fileID: 0}
+  Animate3: {fileID: 0}
   M1:
     e00: 0
     e01: 0
@@ -8721,9 +8712,16 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 0
-  Input: []
-  Correct: {fileID: 0}
-  Wrong: {fileID: 0}
+  User: {fileID: 0}
+  imagetarget: {fileID: 0}
+  Cam: {fileID: 0}
+  UserxRef: {fileID: 0}
+  UseryRef: {fileID: 0}
+  UserzRef: {fileID: 0}
+  Step2: {fileID: 0}
+  Step3: {fileID: 0}
+  Clock: {fileID: 0}
+  Number: {fileID: 0}
 --- !u!1 &964254555
 GameObject:
   m_ObjectHideFlags: 0
@@ -9180,7 +9178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &987874210
 Transform:
   m_ObjectHideFlags: 0
@@ -11765,6 +11763,7 @@ MonoBehaviour:
   Instruction9: {fileID: 0}
   SF: {fileID: 0}
   Instruction10: {fileID: 0}
+  Instruction14: {fileID: 0}
 --- !u!114 &1223522670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12448,6 +12447,7 @@ MonoBehaviour:
   AnsxRef: {fileID: 0}
   AnsyRef: {fileID: 0}
   AnszRef: {fileID: 0}
+  User: {fileID: 0}
 --- !u!1 &1313949536
 GameObject:
   m_ObjectHideFlags: 0
@@ -13466,19 +13466,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b264d578ee20724ab5cc1c91a5bb525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChoiceA: {fileID: 0}
-  ChoiceB: {fileID: 0}
-  ChoiceC: {fileID: 0}
-  ChoiceD: {fileID: 0}
-  LeftArrow: {fileID: 0}
-  RightArrow: {fileID: 0}
-  Q0_A: {fileID: 1584461792}
-  Q0_B: {fileID: 1389678485}
-  Q0_C: {fileID: 1513812}
-  Q0_D: {fileID: 1748454028}
-  Ans0: {fileID: 0}
-  Q0: {fileID: 0}
+  Newquestion: {fileID: 0}
   Q1: {fileID: 0}
+  Animate1: {fileID: 0}
+  Animate2: {fileID: 0}
+  Animate3: {fileID: 0}
   M1:
     e00: 0
     e01: 0
@@ -13530,9 +13522,16 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 0
-  Input: []
-  Correct: {fileID: 0}
-  Wrong: {fileID: 0}
+  User: {fileID: 0}
+  imagetarget: {fileID: 0}
+  Cam: {fileID: 0}
+  UserxRef: {fileID: 0}
+  UseryRef: {fileID: 0}
+  UserzRef: {fileID: 0}
+  Step2: {fileID: 0}
+  Step3: {fileID: 0}
+  Clock: {fileID: 0}
+  Number: {fileID: 0}
 --- !u!1 &1375936170
 GameObject:
   m_ObjectHideFlags: 0
@@ -14102,19 +14101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b264d578ee20724ab5cc1c91a5bb525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChoiceA: {fileID: 0}
-  ChoiceB: {fileID: 0}
-  ChoiceC: {fileID: 0}
-  ChoiceD: {fileID: 0}
-  LeftArrow: {fileID: 0}
-  RightArrow: {fileID: 0}
-  Q0_A: {fileID: 1584461792}
-  Q0_B: {fileID: 1389678485}
-  Q0_C: {fileID: 1513812}
-  Q0_D: {fileID: 1748454028}
-  Ans0: {fileID: 0}
-  Q0: {fileID: 1133774875}
+  Newquestion: {fileID: 0}
   Q1: {fileID: 0}
+  Animate1: {fileID: 0}
+  Animate2: {fileID: 0}
+  Animate3: {fileID: 0}
   M1:
     e00: 0
     e01: 0
@@ -14166,9 +14157,16 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 0
-  Input: []
-  Correct: {fileID: 0}
-  Wrong: {fileID: 0}
+  User: {fileID: 0}
+  imagetarget: {fileID: 0}
+  Cam: {fileID: 0}
+  UserxRef: {fileID: 0}
+  UseryRef: {fileID: 0}
+  UserzRef: {fileID: 0}
+  Step2: {fileID: 0}
+  Step3: {fileID: 0}
+  Clock: {fileID: 0}
+  Number: {fileID: 0}
 --- !u!1 &1422714953
 GameObject:
   m_ObjectHideFlags: 0
@@ -14373,6 +14371,7 @@ MonoBehaviour:
   AnsxRef: {fileID: 0}
   AnsyRef: {fileID: 0}
   AnszRef: {fileID: 0}
+  User: {fileID: 0}
 --- !u!1001 &1426380638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15784,7 +15783,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1690291691
 Transform:
   m_ObjectHideFlags: 0
@@ -16015,7 +16014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1716895094
 Transform:
   m_ObjectHideFlags: 0
@@ -16168,6 +16167,7 @@ MonoBehaviour:
   Instruction9: {fileID: 0}
   SF: {fileID: 0}
   Instruction10: {fileID: 0}
+  Instruction14: {fileID: 0}
 --- !u!114 &1727528957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17112,6 +17112,7 @@ MonoBehaviour:
   AnsxRef: {fileID: 0}
   AnsyRef: {fileID: 0}
   AnszRef: {fileID: 0}
+  User: {fileID: 0}
 --- !u!1 &1768281257
 GameObject:
   m_ObjectHideFlags: 0
@@ -18797,19 +18798,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b264d578ee20724ab5cc1c91a5bb525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ChoiceA: {fileID: 1794167892}
-  ChoiceB: {fileID: 568962599}
-  ChoiceC: {fileID: 1371488997}
-  ChoiceD: {fileID: 153285641}
-  LeftArrow: {fileID: 0}
-  RightArrow: {fileID: 0}
-  Q0_A: {fileID: 0}
-  Q0_B: {fileID: 0}
-  Q0_C: {fileID: 0}
-  Q0_D: {fileID: 0}
-  Ans0: {fileID: 0}
-  Q0: {fileID: 0}
+  Newquestion: {fileID: 0}
   Q1: {fileID: 0}
+  Animate1: {fileID: 0}
+  Animate2: {fileID: 0}
+  Animate3: {fileID: 0}
   M1:
     e00: 0
     e01: 0
@@ -18861,9 +18854,16 @@ MonoBehaviour:
     e31: 0
     e32: 0
     e33: 0
-  Input: []
-  Correct: {fileID: 0}
-  Wrong: {fileID: 0}
+  User: {fileID: 0}
+  imagetarget: {fileID: 0}
+  Cam: {fileID: 0}
+  UserxRef: {fileID: 0}
+  UseryRef: {fileID: 0}
+  UserzRef: {fileID: 0}
+  Step2: {fileID: 0}
+  Step3: {fileID: 0}
+  Clock: {fileID: 0}
+  Number: {fileID: 0}
 --- !u!1 &1953988988
 GameObject:
   m_ObjectHideFlags: 0

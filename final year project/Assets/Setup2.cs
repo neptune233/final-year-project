@@ -26,6 +26,8 @@ public class Setup2 : MonoBehaviour {
     public Sprite HighlightImage;
     public Sprite NormalImage;
 
+    public GameObject Board;
+
     // Use this for initialization
     void Start() {
          
@@ -49,6 +51,37 @@ public class Setup2 : MonoBehaviour {
         Userx.transform.position = Userxcoor.position;
         Usery.transform.position = Userycoor.position;
         Userz.transform.position = Userzcoor.position;
+
+        
+
+            if ((Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began) || Input.GetMouseButtonDown(0))
+           {
+                if (EventSystem.current.currentSelectedGameObject == null)
+                {
+
+                    Board.SetActive(false);
+
+
+                }
+
+
+                if (EventSystem.current.currentSelectedGameObject != null)
+                {
+
+
+                    if (EventSystem.current.currentSelectedGameObject.tag.ToString() == "Input")
+                    {
+                        Board.SetActive(true);
+
+                    }
+                    else
+                    {
+                        Board.SetActive(false);
+
+                    }
+                }
+        }
+
 
 
         for (int i = 0; i < 32; i++)

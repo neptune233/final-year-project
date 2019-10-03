@@ -8,9 +8,9 @@ public class Keyboard : MonoBehaviour
 {
     public InputField[] InputBlock;
     public int current_inputfield = 0;
-    public GameObject Board;
+    
 
-    public Text debug;
+   
    
 
     public void InputString(string inputstring)
@@ -35,38 +35,4 @@ public class Keyboard : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-
-        if (EventSystem.current.currentSelectedGameObject == null)
-        {
-            Debug.Log("nothing");
-            Board.SetActive(false);
-
-
-        }
-
-
-        if (EventSystem.current.currentSelectedGameObject != null)
-        {
-            Debug.Log(EventSystem.current.currentSelectedGameObject.tag);
-            
-            if (EventSystem.current.currentSelectedGameObject.tag.ToString() == "Input")
-            {
-                Board.SetActive(true);
-                
-            }
-            else
-            {
-                Board.SetActive(false);
-               
-            }
-        }
-
-
-
-
-
-    }
 }
