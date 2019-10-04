@@ -15,7 +15,7 @@ namespace Vuforia
     public class DefaultTrackableEventHandler : MonoBehaviour,
                                                 ITrackableEventHandler
     {
-        public Transform TheCanvas;
+        //public Transform TheCanvas;
 
         #region PRIVATE_MEMBER_VARIABLES
  
@@ -34,7 +34,7 @@ namespace Vuforia
             {
                 mTrackableBehaviour.RegisterTrackableEventHandler(this);
             }
-            TheCanvas.gameObject.SetActive(false);
+            //TheCanvas.gameObject.SetActive(false);
         }
 
         #endregion // UNTIY_MONOBEHAVIOUR_METHODS
@@ -89,7 +89,7 @@ namespace Vuforia
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
 
-            TheCanvas.gameObject.SetActive(true);
+            //TheCanvas.gameObject.SetActive(true);
         }
 
 
@@ -112,7 +112,7 @@ namespace Vuforia
 
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
 
-            TheCanvas.gameObject.SetActive(false);
+            //TheCanvas.gameObject.SetActive(false);
         }
 
         #endregion // PRIVATE_METHODS
