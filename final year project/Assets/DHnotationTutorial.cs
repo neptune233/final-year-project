@@ -12,6 +12,8 @@ public class DHnotationTutorial : MonoBehaviour
     public GameObject error_block;
     public GameObject[] parameters;
     public GameObject DH_Table;
+    public GameObject[] Frames_Label;
+    public GameObject[] Instructions;
 
     public GameObject[] DH_Arm;
     public Material[] Materials;
@@ -25,7 +27,7 @@ public class DHnotationTutorial : MonoBehaviour
     private string error_z_axis_selection = "NOTE: The Z axis in each joint need to be assigned along the joint rotation axis";
     private string error_x_axis_selection = "NOTE: The X axis in each joint need to be assigned normal to both Z axises in the current joint and the next joint pointing to the Z axis in the next joint";
 
-    private bool DH_Table_State = true;
+    private bool DH_Table_State = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +35,6 @@ public class DHnotationTutorial : MonoBehaviour
         progress_stage = 1;
         option_stage = 1;
         option = 1;
-
     }
 
     // Update is called once per frame
@@ -88,12 +89,19 @@ public class DHnotationTutorial : MonoBehaviour
 
                 DH_Table.SetActive(DH_Table_State);
 
-                parameters[0].SetActive(true);
-                parameters[1].SetActive(true);
-                parameters[2].SetActive(true);
-                parameters[3].SetActive(true);
-                parameters[4].SetActive(true);
-                parameters[5].SetActive(true);
+                Frames_Label[0].SetActive(true);
+                Frames_Label[1].SetActive(true);
+                Frames_Label[2].SetActive(true);
+                Frames_Label[3].SetActive(true);
+                Frames_Label[4].SetActive(true);
+             
+
+                //parameters[0].SetActive(true);
+                //parameters[1].SetActive(true);
+                //parameters[2].SetActive(true);
+                //parameters[3].SetActive(true);
+                //parameters[4].SetActive(true);
+                //parameters[5].SetActive(true);
 
                 break;
             case 5:
@@ -292,12 +300,12 @@ public class DHnotationTutorial : MonoBehaviour
                 else if (option == 3)
                 {
                     frames[9].SetActive(false);
-                    frames[8].SetActive(false);
+                    frames[7].SetActive(false);
 
-                    frames[7].SetActive(true);
-                    frames[7].transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
-                    frames[7].transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
-                    frames[7].transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
+                    frames[8].SetActive(true);
+                    frames[8].transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
+                    frames[8].transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
+                    frames[8].transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
 
                 }
 
@@ -330,6 +338,8 @@ public class DHnotationTutorial : MonoBehaviour
                 correct_option = 1;
                 //error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
                 error_message.GetComponent<Text>().text = error_x_axis_selection;
+                Instructions[0].SetActive(false);
+                Instructions[1].SetActive(true);
                 break;
             case 5:
                 if (option == 1)
@@ -356,34 +366,43 @@ public class DHnotationTutorial : MonoBehaviour
                 correct_option = 2;
                 //error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
                 error_message.GetComponent<Text>().text = error_x_axis_selection;
+                Instructions[0].SetActive(false);
+                Instructions[1].SetActive(true);
                 break;
             case 6:
                 if (option == 1)
                 {
                     frames[9].SetActive(false);
-                    frames[8].SetActive(false);
+                    //frames[8].SetActive(false);
 
                     frames[7].SetActive(true);
                     frames[7].transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
-                    frames[7].transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
+                    frames[7].transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
                     frames[7].transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
                 }
                 else if (option == 2)
                 {
                     frames[7].transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(false);
                     frames[9].SetActive(false);
+                    frames[7].SetActive(false);
 
                     frames[8].SetActive(true);
                     frames[8].transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
-                    frames[8].transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);
+                    frames[8].transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true);
                     frames[8].transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
                 }
 
                 correct_option = 2;
                 //error_message.GetComponent<TextEditor>().text = error_z_axis_selection;
                 error_message.GetComponent<Text>().text = error_x_axis_selection;
+                Instructions[0].SetActive(false);
+                Instructions[1].SetActive(true);
                 break;
             case 7:
+                frames[1].transform.GetChild(2).gameObject.SetActive(true);
+                frames[5].transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(true);
+                frames[8].transform.GetChild(0).transform.GetChild(2).gameObject.SetActive(true);
+
                 progress_stage += 1;
                 break;
             default:

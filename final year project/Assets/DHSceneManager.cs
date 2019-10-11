@@ -19,4 +19,9 @@ public class DHSceneManager : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+
+    public void Exit_btn()
+    {
+        Application.Quit();
+    }
 }

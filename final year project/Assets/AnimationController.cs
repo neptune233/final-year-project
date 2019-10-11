@@ -22,7 +22,7 @@ public class AnimationController : MonoBehaviour
     public int StepIndexMax = 7;
     public bool Animation_State = false;
 
-    private float[] Animation_Time = { 0, 2, 8, 27, 30, 34, 37, 42};
+    private float[] Animation_Time = { 0.1f, 2.1f, 8.1f, 27.1f, 30.1f, 34.1f, 37.1f, 42.1f};
 
     // Start is called before the first frame update 
     void Start()
@@ -45,6 +45,8 @@ public class AnimationController : MonoBehaviour
         AnimatorClipInfo[] myAnimatorClip = animator.GetCurrentAnimatorClipInfo(0);
         animator.Play("DH Notation lecture example", -1, (Animation_Time[Step_index]) / myAnimatorClip[0].clip.length);
         animator.speed = 1;
+        pauseAnim();
+        //Animation_Jump(0.1f);
     }
 
     public void Prevous_Step_btn()
@@ -60,6 +62,8 @@ public class AnimationController : MonoBehaviour
         AnimatorClipInfo[] myAnimatorClip = animator.GetCurrentAnimatorClipInfo(0);
         animator.Play("DH Notation lecture example", -1, (Animation_Time[Step_index]) / myAnimatorClip[0].clip.length);
         animator.speed = 1;
+        pauseAnim();
+        //Animation_Jump(0.1f);   
     }
 
     public void Animation_Speed_Adjust(float change)
@@ -79,7 +83,7 @@ public class AnimationController : MonoBehaviour
     {
         AnimatorClipInfo[] myAnimatorClip = animator.GetCurrentAnimatorClipInfo(0);
 
-        animator.Play("DH Notation lecture example", -1, (Animation_Time[Step_index]) / myAnimatorClip[0].clip.length);
+        animator.Play("DH Notation lecture example", -1, (0.1f) / myAnimatorClip[0].clip.length);
         Animation_State = true;
     }
 
@@ -224,7 +228,7 @@ public class AnimationController : MonoBehaviour
 
         if (myTime > 50.8 && myTime < 50.9)
         {
-            //animator.speed = 0;
+            animator.speed = 0;
             //Step_index = 6;
             //Steps[5].SetActive(false);
             //Steps[6].SetActive(true);
