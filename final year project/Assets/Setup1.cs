@@ -19,15 +19,9 @@ public class Setup1 : MonoBehaviour
     public Transform Userycoor; // Position information of y text in user coordinate
     public Transform Userzcoor; // Position information of z text in user coordinate
 
-    public GameObject[] Matrix;
-    public Sprite HighlightImage;
-    public Sprite NormalImage;
+    
+   
 
-    // Use this for initialization
-    void Start()
-    {
-
-    }
 
 
     private void Update()
@@ -45,6 +39,7 @@ public class Setup1 : MonoBehaviour
 
     }
 
+    
 
 }
 

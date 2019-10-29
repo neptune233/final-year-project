@@ -27,11 +27,13 @@ public class Keyboard : MonoBehaviour
     }
 
     public void Next_btn()
-    {
-        current_inputfield += 1;
-        if (current_inputfield > InputBlock.Length)
+    {   if (current_inputfield < 32)
         {
-            current_inputfield = InputBlock.Length;
+            current_inputfield += 1;
+            if (current_inputfield > InputBlock.Length)
+            {
+                current_inputfield = InputBlock.Length;
+            }
         }
     }
 

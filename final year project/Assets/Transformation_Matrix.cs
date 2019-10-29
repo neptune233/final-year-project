@@ -9,8 +9,8 @@ public class Transformation_Matrix : MonoBehaviour
         {
             float qw = Mathf.Sqrt(1f + matrix4X4.m00 + matrix4X4.m11 + matrix4X4.m22) / 2;
             float w = 4 * qw;
-            float qx = (matrix4X4.m21 - matrix4X4.m12) / w;
-            float qy = (matrix4X4.m02 - matrix4X4.m20) / w;
+            float qx = -(matrix4X4.m21 - matrix4X4.m12) / w;
+            float qy = -(matrix4X4.m02 - matrix4X4.m20) / w;
             float qz = (matrix4X4.m10 - matrix4X4.m01) / w;
             return new Quaternion(qx, qy, qz, qw);
         }
