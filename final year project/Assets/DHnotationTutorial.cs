@@ -14,6 +14,10 @@ public class DHnotationTutorial : MonoBehaviour
     public GameObject DH_Table;
     public GameObject[] Frames_Label;
     public GameObject[] Instructions;
+    public GameObject instruction_1;
+    public GameObject hint_scene;
+    public GameObject hint1;
+    public GameObject hint2;
 
     public GameObject[] DH_Arm;
     public Material[] Materials;
@@ -136,6 +140,25 @@ public class DHnotationTutorial : MonoBehaviour
         //}
     }
 
+    public void open_hint_btn()
+    {
+        hint_scene.SetActive(true);
+        hint1.SetActive(true);
+        hint2.SetActive(false);
+
+    }
+
+    public void next_hint_btn()
+    {
+        hint1.SetActive(false);
+        hint2.SetActive(true);
+    }
+
+    public void close_hint_btn()
+    {
+        hint_scene.SetActive(false);
+    }
+
     public void DH_table_btn()
     {
         DH_Table_State = !DH_Table_State;
@@ -166,7 +189,7 @@ public class DHnotationTutorial : MonoBehaviour
         option -= 1;
         if(option < 1)
         {
-            option = 1;
+            option = 3;
         }
     }
 
@@ -175,8 +198,13 @@ public class DHnotationTutorial : MonoBehaviour
         option += 1;
         if(option > 3)
         {
-            option = 3;
+            option = 1;
         }
+    }
+
+    public void instruction1_btn()
+    {
+        instruction_1.SetActive(!instruction_1.activeSelf);
     }
 
     public void Confirm_btn()

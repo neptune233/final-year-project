@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: cee2a045c850ee040a6b54b03cdededf
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Button_image_0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -104,11 +105,31 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Button_image_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 8
+        width: 124
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 25, y: 27, z: 26, w: 27}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acba156a127a37d4bb3be1b2a8b1d044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a89d5015c6e86a849b50c86f5a383313
     vertices: []
     indices: 
     edges: []

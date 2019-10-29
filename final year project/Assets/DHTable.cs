@@ -26,6 +26,7 @@ public class DHTable : MonoBehaviour
     public Text Distance_fill2;
     public GameObject Correct_marker;
     public GameObject Wrong_marker;
+    public GameObject DH_table;
 
     public int Instruction_alpha_index = 0;
     public int Instruction_a_index = 0;
@@ -42,6 +43,7 @@ public class DHTable : MonoBehaviour
     private bool Answer_state = false;
     private GameObject Previous_Axis;
     private int Correct_Stage = 0;
+    private int prev_table_index = 0;
 
     private bool initial_flag = true;
 
@@ -50,11 +52,7 @@ public class DHTable : MonoBehaviour
 
     public void start_dh_table_btn()
     {
-        if (initial_flag)
-        {
-            Instruction_alpha_btn();
-            initial_flag = false;
-        }
+     Instruction_alpha_btn();
     }
 
     public void Instruction_alpha_btn()
@@ -153,6 +151,11 @@ public class DHTable : MonoBehaviour
         }
         */
 
+        if (DH_Table_Element[prev_table_index].GetComponent<Image>().color == Color.yellow)
+        {
+            DH_Table_Element[prev_table_index].GetComponent<Image>().color = Color.white;
+        }
+
         Answer = answer;
         DH_Table_Element[Answer].GetComponent<Image>().color = Color.yellow;
 
@@ -201,6 +204,7 @@ public class DHTable : MonoBehaviour
         Correct_marker.SetActive(false);
         Wrong_marker.SetActive(false);
 
+        prev_table_index = answer;
     }
 
     public void Confirm_btn()
@@ -210,21 +214,21 @@ public class DHTable : MonoBehaviour
 
         if(Angle_fill1.text == "_")
         {
-            Angle_fill1.text = Candidate;
-            Distance_fill1.text = Candidate;
+            Angle_fill1.text = Candidate[2].ToString() + Candidate[1].ToString();
+            Distance_fill1.text = Candidate[2].ToString() + Candidate[1].ToString();
         }
         else if (Angle_fill2.text == "_")
         {
             if (Candidate != Angle_fill1.text)
             {
-                Angle_fill2.text = Candidate;
-                Distance_fill2.text = Candidate;
+                Angle_fill2.text = Candidate[2].ToString() + Candidate[1].ToString();
+                Distance_fill2.text = Candidate[2].ToString() + Candidate[1].ToString();
             }
             }
         else
         {
-            Angle_fill1.text = Candidate;
-            Distance_fill1.text = Candidate;
+            Angle_fill1.text = Candidate[2].ToString() + Candidate[1].ToString();
+            Distance_fill1.text = Candidate[2].ToString() + Candidate[1].ToString();
 
             Angle_fill2.text = "_";
             Distance_fill2.text = "_";
@@ -425,7 +429,10 @@ public class DHTable : MonoBehaviour
             if (i == Instruction_alpha_index)
             {
                 Instruction_alpha.transform.GetChild(i).gameObject.SetActive(true);
-               
+               if (i == 1)
+                {
+                    DH_table.SetActive(true);
+                }
             }
             else if (i != Instruction_alpha_index)
             {
@@ -433,38 +440,38 @@ public class DHTable : MonoBehaviour
                 
             }
 
-            if (i == Instruction_a_index)
-            {
-                Instruction_a.transform.GetChild(i).gameObject.SetActive(true);
+            //if (i == Instruction_a_index)
+            //{
+            //    Instruction_a.transform.GetChild(i).gameObject.SetActive(true);
 
-            }
-            else if (i != Instruction_a_index)
-            {
-                Instruction_a.transform.GetChild(i).gameObject.SetActive(false);
+            //}
+            //else if (i != Instruction_a_index)
+            //{
+            //    Instruction_a.transform.GetChild(i).gameObject.SetActive(false);
 
-            }
+            //}
 
-            if (i == Instruction_d_index)
-            {
-                Instruction_d.transform.GetChild(i).gameObject.SetActive(true);
+            //if (i == Instruction_d_index)
+            //{
+            //    Instruction_d.transform.GetChild(i).gameObject.SetActive(true);
 
-            }
-            else if (i != Instruction_d_index)
-            {
-                Instruction_d.transform.GetChild(i).gameObject.SetActive(false);
+            //}
+            //else if (i != Instruction_d_index)
+            //{
+            //    Instruction_d.transform.GetChild(i).gameObject.SetActive(false);
 
-            }
+            //}
 
-            if (i == Instruction_theta_index)
-            {
-                Instruction_theta.transform.GetChild(i).gameObject.SetActive(true);
+            //if (i == Instruction_theta_index)
+            //{
+            //    Instruction_theta.transform.GetChild(i).gameObject.SetActive(true);
 
-            }
-            else if (i != Instruction_theta_index)
-            {
-                Instruction_theta.transform.GetChild(i).gameObject.SetActive(false);
+            //}
+            //else if (i != Instruction_theta_index)
+            //{
+            //    Instruction_theta.transform.GetChild(i).gameObject.SetActive(false);
 
-            }
+            //}
         }
     }
 }

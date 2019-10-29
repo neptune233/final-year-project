@@ -13,16 +13,19 @@ public class AnimationController : MonoBehaviour
     public Transform MyResumeButton;
     public float myTime;
     public GameObject[] Steps;
+    public GameObject finger_pointer1;
+    public GameObject finger_pointer2;
 
     public int flag = 1;
     public float animation_speed = 1;
-    public float animation_change_factor = 0.5f;
+    public float animation_change_factor = 0.8f;
 
     public int Step_index = 0;
     public int StepIndexMax = 7;
     public bool Animation_State = false;
 
     private float[] Animation_Time = { 0.1f, 2.1f, 8.1f, 27.1f, 30.1f, 34.1f, 37.1f, 42.1f};
+    private bool finger1_flag = true;
 
     // Start is called before the first frame update 
     void Start()
@@ -34,6 +37,10 @@ public class AnimationController : MonoBehaviour
 
     public void Next_Step_btn()
     {
+        finger1_flag = false;
+        finger_pointer1.SetActive(false);
+        finger_pointer2.SetActive(true);
+
         Step_index += 1;
 
         if(Step_index > StepIndexMax)
@@ -104,6 +111,9 @@ public class AnimationController : MonoBehaviour
         MyResumeButton.gameObject.SetActive(false);
 
         if (flag == 0) { flag = 1; }
+
+        finger_pointer2.SetActive(false);
+        finger1_flag = true;
     }
 
     void resumeAnim()
@@ -149,6 +159,10 @@ public class AnimationController : MonoBehaviour
             animator.speed = 0;
             //Step_index = 7;
             //Steps[7].SetActive(true);
+            if (finger1_flag)
+            {
+                finger_pointer1.SetActive(true);
+            }
         }
 
         if (myTime > 7.8 && myTime < 7.9)
@@ -166,6 +180,10 @@ public class AnimationController : MonoBehaviour
             //    flag = 0;
             //}
             //else { }
+            if (finger1_flag)
+            {
+                finger_pointer1.SetActive(true);
+            }
         }
 
         if (myTime > 26.8 && myTime < 26.9)
@@ -179,6 +197,10 @@ public class AnimationController : MonoBehaviour
             //{ pauseAnim();
             //    flag = 0;
             //}
+            if(finger1_flag)
+            {
+                finger_pointer1.SetActive(true);
+            }
         }
 
         if (myTime > 29.8 && myTime < 29.9)
@@ -188,6 +210,10 @@ public class AnimationController : MonoBehaviour
             //Steps[1].SetActive(false);
             //Steps[2].SetActive(true);
             //if (myTime == 28.5) { pauseAnim(); }
+            if (finger1_flag)
+            {
+                finger_pointer1.SetActive(true);
+            }
         }
 
         if (myTime > 33.8 && myTime < 33.9)
@@ -197,6 +223,10 @@ public class AnimationController : MonoBehaviour
             //Steps[2].SetActive(false);
             //Steps[3].SetActive(true);
             //if (myTime == 30.5) { pauseAnim(); }
+            if (finger1_flag)
+            {
+                finger_pointer1.SetActive(true);
+            }
         }
 
         if (myTime > 36.8 && myTime < 36.9)
@@ -206,6 +236,10 @@ public class AnimationController : MonoBehaviour
             //Steps[3].SetActive(false);
             //Steps[4].SetActive(true);
             //if (myTime == 34.5) { pauseAnim(); }
+            if (finger1_flag)
+            {
+                finger_pointer1.SetActive(true);
+            }
         }
 
         if (myTime > 41.8 && myTime < 41.9)
@@ -215,6 +249,10 @@ public class AnimationController : MonoBehaviour
             //Steps[4].SetActive(false);
             //Steps[5].SetActive(true);
             //if (myTime == 37.5) { pauseAnim(); }
+            if (finger1_flag)
+            {
+                finger_pointer1.SetActive(true);
+            }
         }
 
         if (myTime > 47.8 && myTime < 47.9)
@@ -224,6 +262,10 @@ public class AnimationController : MonoBehaviour
             //Steps[5].SetActive(false);
             //Steps[6].SetActive(true);
             //if (myTime == 42.5) { pauseAnim(); }
+            if (finger1_flag)
+            {
+                finger_pointer1.SetActive(true);
+            }
         }
 
         if (myTime > 50.8 && myTime < 50.9)
@@ -233,6 +275,7 @@ public class AnimationController : MonoBehaviour
             //Steps[5].SetActive(false);
             //Steps[6].SetActive(true);
             //if (myTime == 48.5) { pauseAnim(); }
+            
         }
 
         for (int i = 0; i <= StepIndexMax; i++)

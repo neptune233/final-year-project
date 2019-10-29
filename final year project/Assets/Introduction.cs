@@ -31,6 +31,11 @@ public class Introduction : MonoBehaviour
         Instruction.SetActive(true);
     }
 
+    public void Skip_intro_btn()
+    {
+        MainScene_counter = 1;
+    }
+
     private void Start()
     {
         Instruction.SetActive(true);
